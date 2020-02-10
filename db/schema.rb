@@ -10,14 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_02_08_074116) do
+ActiveRecord::Schema.define(version: 2020_02_08_075433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.integer "genres"
+    t.string "image"
+    t.string "spotify_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artists_tracks", force: :cascade do |t|
+    t.bigint "track_id"
+    t.bigint "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artists_tracks_on_artist_id"
+    t.index ["track_id"], name: "index_artists_tracks_on_track_id"
+  end
+
   create_table "events", force: :cascade do |t|
-    t.integer "date"
+    t.date "date"
     t.string "venue"
     t.float "longitude"
     t.float "latitude"
@@ -25,13 +42,22 @@ ActiveRecord::Schema.define(version: 2020_02_08_074116) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_events", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "event_id"
+  create_table "tracks", force: :cascade do |t|
+    t.string "name"
+    t.string "album"
+    t.string "spotify_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_user_events_on_event_id"
-    t.index ["user_id"], name: "index_user_events_on_user_id"
+  end
+
+  create_table "tracks_users", force: :cascade do |t|
+    t.bigint "track_id"
+    t.bigint "user_id"
+    t.string "source"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["track_id"], name: "index_tracks_users_on_track_id"
+    t.index ["user_id"], name: "index_tracks_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,11 +71,24 @@ ActiveRecord::Schema.define(version: 2020_02_08_074116) do
     t.float "longitude"
     t.float "latitude"
     t.string "genres"
-    t.string "spotify_user_id"
+    t.string "spotify_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "user_events", "events"
-  add_foreign_key "user_events", "users"
+  create_table "users_events", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_users_events_on_event_id"
+    t.index ["user_id"], name: "index_users_events_on_user_id"
+  end
+
+  add_foreign_key "artists_tracks", "artists"
+  add_foreign_key "artists_tracks", "tracks"
+  add_foreign_key "tracks_users", "tracks"
+  add_foreign_key "tracks_users", "users"
+  add_foreign_key "users_events", "events"
+  add_foreign_key "users_events", "users"
 end
