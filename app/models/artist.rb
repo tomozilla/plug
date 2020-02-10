@@ -1,3 +1,3 @@
 class Artist < ApplicationRecord
-  belongs_to :artists_tracks
+  belongs_to :artistsTack
 end
