@@ -4,7 +4,7 @@ class CreateArtists < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :genres
       t.string :image
-      t.string :spotify_artist_id
+      t.string :spotify_id
 
       t.timestamps
     end
