@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :tracksUsers
-  has_many :tracks, through: :tracksUser
   has_many :usersEvents
+  has_many :tracks, through: :tracksUsers
   has_many :events, through: :usersEvents
+  validates :email, presence: true
+  validates :genres, presence: true
+  validates :spotify_id, presence: true
 end
