@@ -21,18 +21,21 @@ puts "Start Updating databse"
   new_artist = Artist.create!(
     name: Faker::Music.band,
     genres: Faker::Music.genre,
-    image: Faker::LoremFlickr.image
+    image: Faker::LoremFlickr.image,
+    spotify_id: Faker::IDNumber.valid
   )
 
   new_track = Track.create!(
     name: Faker::Music.band,
-    album: Faker::Music.album
+    album: Faker::Music.album,
+    spotify_id: Faker::IDNumber.valid
   )
 
   new_user = User.create!(
     email: Faker::Internet.email,
     password: "111111",
-    genres: Faker::Music.genre
+    genres: Faker::Music.genre,
+    spotify_id: Faker::IDNumber.valid
   )
 
   new_event = Event.create!(
