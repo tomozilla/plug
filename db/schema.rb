@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_075433) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.integer "genres"
+    t.string "genres"
     t.string "image"
     t.string "spotify_id"
     t.datetime "created_at", null: false
