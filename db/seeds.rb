@@ -17,25 +17,25 @@ puts "Users Destroyed"
 
 puts "Start Updating databse"
 
-20.times do 
+20.times do
   new_artist = Artist.create!(
     name: Faker::Music.band,
     genres: Faker::Music.genre,
     image: Faker::LoremFlickr.image,
-    spotify_id: Faker::IDNumber.valid
+    spotify_id: Faker::Internet.password
   )
 
   new_track = Track.create!(
     name: Faker::Music.band,
     album: Faker::Music.album,
-    spotify_id: Faker::IDNumber.valid
+    spotify_id: Faker::Internet.password
   )
 
   new_user = User.create!(
     email: Faker::Internet.email,
     password: "111111",
     genres: Faker::Music.genre,
-    spotify_id: Faker::IDNumber.valid
+    spotify_id: Faker::Internet.password
   )
 
   new_event = Event.create!(
@@ -51,4 +51,4 @@ puts "Start Updating databse"
   new_track.artistsTracks.create!(artist: rand_artist)
 end
 
-puts "Finish Updating databse"
+puts "Finish Updating database"
