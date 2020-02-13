@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get "dashboard", to: "dashboard#show"
+  get "dashboard", to: "pages#dashboard"
   resources :events, { only: [:index, :create,:show] }
   resources :tracks, { only: [:index, :create, :delete] }
 
