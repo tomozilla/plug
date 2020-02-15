@@ -1,0 +1,22 @@
+.button-header {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  background-color: #AAA;
+  @include border-radius(4px);
+  margin: 0px 5px;
+  padding: 0px 20px;
+  color: White;
+  font-weight: 700;
+  background-color: #42275A
+
+  }
+
+.title {
+  float: center;
+  font-size: 1.4em;
+  font-weight: 400;
+  padding: 15px;
+  color: #AAA;
+
+      }

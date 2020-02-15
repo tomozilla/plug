@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+
   namespace :api do
     namespace :v1 do
       get '/login', to: "auth#spotify_request"
@@ -8,7 +9,9 @@ Rails.application.routes.draw do
       get '/user', to: "users#create"
     end
   end
-  get "dashboard", to: "pages#dashboard"
+
+  get "library", to: "pages#library"
+
 
   resources :events, { only: [:index, :create, :show] }
   resources :tracks, { only: [:create, :delete] }

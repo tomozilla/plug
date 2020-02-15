@@ -1,0 +1,27 @@
+<div class="list">
+  <div class="title">Your favourite songs by event</div>
+    <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th><div class="button-header">Event</div></th>
+        <th><div class="button-header">Album</div></th>
+        <th><div class="button-header">Song</div></th>
+      </tr>
+   </thead>
+   <tbody>
+    <tr>
+      <td scope="col"> <p> <%=  "#{events.date}" %> </p></td>
+      <td scope="col"> <p> <%= "#{events.venue}" %> </p></td>
+    </tr>
+    <tr>
+      <td scope="col"> <p> <%= "#{track.name}" %> </p></td>
+      <td scope="col"> <p> <%= "#{track.album}" %> </p></td>
+    </tr>
+    <tr>
+      <td scope="col"> <p> <%= "#{artist.name}" %> </p></td>
+      <td scope="col"> <p> <%= "#{artist.genres}" %> </p></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
