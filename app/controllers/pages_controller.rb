@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :dashboard]
+  skip_before_action :authenticate_user!, only: [:home, :library]
 
-  def dashboard
+  def library
     @user = User.first
   end
 
