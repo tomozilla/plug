@@ -1,11 +1,11 @@
 require 'faker'
 
 ArtistsTrack.destroy_all
-puts "ArtistsTracks Destroyed"
+puts "Artists_tracks Destroyed"
 TracksUser.destroy_all
 puts "TracksUsers Destroyed"
 UsersEvent.destroy_all
-puts "UsersEvents Destroyed"
+puts "Users_events Destroyed"
 Artist.destroy_all
 puts "Artists Destroyed"
 Track.destroy_all
@@ -44,11 +44,11 @@ puts "Start Updating databse"
   )
 
   rand_user = User.offset(rand(User.count)).first
-  new_event.usersEvents.create!(user: new_user)
+  new_event.users_events.create!(user: new_user)
   rand_track = Track.offset(rand(Track.count)).first
-  new_user.tracksUsers.create!(track: rand_track)
+  TracksUser.create!(user: new_user, track: rand_track, event: new_event)
   rand_artist = Artist.offset(rand(Artist.count)).first
-  new_track.artistsTracks.create!(artist: rand_artist)
+  new_track.artists_tracks.create!(artist: rand_artist)
 end
 
 puts "Finish Updating database"

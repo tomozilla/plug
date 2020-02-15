@@ -21,14 +21,14 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-    <% @my_tracks.each do |track| %>
+    <% @tracks.each do |track| %>
       <% track.artists.each do |artist| %>
       <%= render "shared/artist_card", artist: artist %>
       <% end %>
     <% end %>
   </div>
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <% @my_tracks.each do |track| %>
+    <% @tracks.each do |track| %>
     <%= render "shared/track_card", track: track %>
     <% end %>
   </div>
