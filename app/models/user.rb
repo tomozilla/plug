@@ -8,6 +8,4 @@ class User < ApplicationRecord
   has_many :tracks, through: :tracksUsers
   has_many :events, through: :usersEvents
   validates :email, presence: true
-  validates :genres, presence: true
-  validates :spotify_id, presence: true
 end
