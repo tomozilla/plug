@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_114251) do
+ActiveRecord::Schema.define(version: 2020_02_15_084329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2020_02_11_114251) do
     t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "event_id"
+    t.index ["event_id"], name: "index_tracks_users_on_event_id"
     t.index ["track_id"], name: "index_tracks_users_on_track_id"
     t.index ["user_id"], name: "index_tracks_users_on_user_id"
   end
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_114251) do
 
   add_foreign_key "artists_tracks", "artists"
   add_foreign_key "artists_tracks", "tracks"
+  add_foreign_key "tracks_users", "events"
   add_foreign_key "tracks_users", "tracks"
   add_foreign_key "tracks_users", "users"
   add_foreign_key "users_events", "events"
