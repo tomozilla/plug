@@ -15,7 +15,6 @@ class PagesController < ApplicationController
     else
       redirect_to "/"
     end
-
   end
 
   def home
