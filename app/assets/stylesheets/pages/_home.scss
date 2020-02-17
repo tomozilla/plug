@@ -1,1 +1,40 @@
-// Specific CSS for your home-page
+<div class="home_video_wrapper">
+  <%= video_tag "concert.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: 'home_video' %>
+  <div class="container">
+    <h1> Plug yourself into <strong></h1>
+    <h1>fresh, niche, curated music list!</strong>!</h1>
+    <p>Get your playlist once enjoying yourself at the concert!</p>
+    <%= link_to "Get it now", events_index_path, class: "btn btn-gradient" %></h1>
+  </div>
+</div>
+
+
+  <div class="card">
+     <% @tracks.each do |track| %>
+      <% track.artists.each do |artist| %>
+      <%= render "shared/artist_card", artist: artist %>
+      <% end %>
+    <% end %>
+    </div>
+
+  <div class="card">
+    <% @tracks.each do |track| %>
+    <%= render "shared/track_card", track: track %>
+    <% end %>
+
+  </div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Pet Sitter
+  </div>
+</div>
