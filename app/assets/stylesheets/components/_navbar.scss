@@ -1,3 +1,13 @@
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #deddfa;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #deddfa;
+
+}
+
 .navbar-plug {
   justify-content: space-between;
   background: #191919;
@@ -9,4 +19,5 @@
 
 .navbar-plug .navbar-brand img {
   width: 40px;
+  color: #deddfa;
 }
