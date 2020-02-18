@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2020_02_18_113645) do
     t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "artist"
   end
 
   create_table "tracks", force: :cascade do |t|
