@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
-
-  skip_before_action :authenticate_user!, only: [:home]
+  # skip_before_action :authenticate_user!, only: [:home, :dashboard]
 
   def library
     if user_signed_in?

@@ -9,8 +9,9 @@ class Api::V1::AuthController < ApplicationController
     query_params = {
       client_id: SPOTIFY_CLIENT_ID,
       response_type: 'code',
-      redirect_uri: 'http://localhost:3000/api/v1/user',
+      redirect_uri: 'http://12a74d38.ngrok.io/api/v1/user',
       scope: "user-library-read 
+      user-read-email
       playlist-read-collaborative
       playlist-modify-private
       user-modify-playback-state
@@ -21,4 +22,5 @@ class Api::V1::AuthController < ApplicationController
     }
     redirect_to "#{url}?#{query_params.to_query}"
   end
+
 end
