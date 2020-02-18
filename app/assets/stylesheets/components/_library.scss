@@ -16,14 +16,14 @@
   float: center;
   font-size: 1.4em;
   font-weight: 400;
-  padding: 15px;
+  padding: 20px 20px;
   color: #AAA;
 
 }
 
 .search-bar {
-  position: absolute;
-  margin: auto;
+  position: relative;
+  margin: 15px auto;
   top: 0;
   left: 0;
   right: 0;
@@ -138,3 +138,16 @@
     }
   }
 }
+
+.decorated-box {
+  overflow: hidden;
+  height: 700px;
+  margin: 50px 0;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 35px 35px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  background: #FEFFFE;
+}
+
