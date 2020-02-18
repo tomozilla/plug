@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:home, :dashboard]
+ skip_before_action :authenticate_user!, only: [:home, :dashboard]
 
   def library
     if user_signed_in?
@@ -17,6 +17,6 @@ class PagesController < ApplicationController
   end
 
   def home
-    @tracks = current_user.tracks
+    @tracks = current_user.tracks unless current_user.nil?
   end
 end

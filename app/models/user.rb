@@ -22,9 +22,11 @@ class User < ApplicationRecord
       user.refresh_token = refresh_token
       user.save
     end
-
     return user
+  end
+
   def favorited_tracks
     tracks.joins(:tracks_users).where.not(tracks_users: { event: nil }).distinct
   end
+
 end

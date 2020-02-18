@@ -8,20 +8,21 @@
     <%= link_to "Get started", events_index_path, class: "btn btn-gradient" %></h1>
   </div>
 </div>
+  <% unless @tracks.nil? %>
+    <div >
+        <% @tracks.each do |track| %>
+          <% track.artists.each do |artist| %>
+          <%= render "shared/artist_card", artist: artist %>
+          <% end %>
+        <% end %>
+    </div>
 
-<div >
-    <% @tracks.each do |track| %>
-      <% track.artists.each do |artist| %>
-      <%= render "shared/artist_card", artist: artist %>
+    <div >
+      <% @tracks.each do |track| %>
+      <%= render "shared/track_card", track: track %>
       <% end %>
-    <% end %>
-  </div>
-
-  <div >
-    <% @tracks.each do |track| %>
-    <%= render "shared/track_card", track: track %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
 <div class="footer">
   <div class="footer-links">
