@@ -1,12 +1,23 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #deddfa;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-light .navbar-nav .nav-link {
+  color: #deddfa;
+
+}
+
+.navbar-plug {
+  justify-content: space-between;
+  background: #191919;
+}
+
+.navbar-plug .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-plug .navbar-brand img {
   width: 40px;
+  color: #deddfa;
 }
