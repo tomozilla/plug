@@ -19,5 +19,6 @@ class PagesController < ApplicationController
   end
 
   def home
+    @tracks = current_user.tracks
   end
 end
