@@ -4,5 +4,6 @@ class Event < ApplicationRecord
   validates :venue, presence: true
   geocoded_by :venue
   after_validation :geocode
+  has_one_attached :photo
   # , if: :will_save_change_to_address?
 end

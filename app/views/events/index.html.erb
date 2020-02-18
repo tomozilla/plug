@@ -5,13 +5,13 @@
     <div class="card-event">
     <% @events.each do |event| %>
       <%= event.venue %>
-      <%= event.display_name %>
-      <% if event.artist_image.exist? %>
-        <%= image_tag(event.artist_image) %>
+      <%= event.title %>
+      <%= event.artist %>
+      <% if event.photo.exist? %>
+        <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
       <% else %>
         <%= image_tag("artist.png") %>
       <% end %>
-      <!-- in the model -->
     <% end %>
       <div class="card-event-title">
         <div>
