@@ -1,2 +1,16 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+ <h1> <%=current_user.events.name %></h1>
+</div>
+
+<div class="top-songs">
+  <h2>Top 5 songs</h2>
+  <% @tracks.each do |track| %>
+    <% track.artists.each do |artist| %>
+    <%= render "shared/artist_card", artist: artist %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="top-artists">
+
+</div>
