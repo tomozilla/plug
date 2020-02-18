@@ -1,4 +1,4 @@
-<div class="home_video_wrapper">
+<div class="home-video-wrapper">
   <%= video_tag "concert.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: 'home_video' %>
   <div class="container">
     <h1> Plug yourself into <strong></h1>
