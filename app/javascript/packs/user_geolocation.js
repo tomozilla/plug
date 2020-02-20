@@ -6,7 +6,7 @@ function findMe() {
       navigator.geolocation.getCurrentPosition(function(position) {
         const currentLatitude = position.coords.latitude;
         const currentLongitude = position.coords.longitude;
-        window.location.replace(`/events/?lat=${currentLatitude}&lon=${currentLongitude}`);
+        window.location.replace(`${window.location}?lat=${currentLatitude}&lon=${currentLongitude}`);
       }, function() {
         alert('We couldn\'t find your position.');
       });
