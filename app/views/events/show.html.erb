@@ -3,7 +3,7 @@
 </div>
 
 <div class="top-songs">
-  <h2>Top 5 songs</h2>
+  <h1>Top 5 songs</h1>
   <% @tracks.each do |track| %>
     <% track.artists.each do |artist| %>
     <%= render "shared/artist_card", artist: artist %>
@@ -12,5 +12,8 @@
 </div>
 
 <div class="top-artists">
-
+  <h1>Top 5 artists</h1>
+   <% @tracks.each do |track| %>
+      <%= render "shared/track_card", track: track %>
+      <% end %>
 </div>
