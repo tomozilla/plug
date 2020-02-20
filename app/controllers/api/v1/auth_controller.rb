@@ -1,4 +1,5 @@
 class Api::V1::AuthController < ApplicationController
+  skip_before_action :authenticate_user!
 
   SLACK_API_TOKEN = "xoxb-843568960375-867449413506-41hdhOLmF8OxaeEtFeSvbEf2"
   SPOTIFY_CLIENT_ID = "80a4b6a4fb4f4add9b6a8289eb936864"
@@ -11,6 +12,7 @@ class Api::V1::AuthController < ApplicationController
       response_type: 'code',
       redirect_uri: 'http://localhost:3000/api/v1/user',
       scope: "user-library-read 
+      user-read-email
       playlist-read-collaborative
       playlist-modify-private
       user-modify-playback-state
@@ -21,4 +23,5 @@ class Api::V1::AuthController < ApplicationController
     }
     redirect_to "#{url}?#{query_params.to_query}"
   end
+
 end
