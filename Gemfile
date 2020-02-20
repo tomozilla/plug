@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 gem 'rest-client'
+gem 'simple_token_authentication'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
