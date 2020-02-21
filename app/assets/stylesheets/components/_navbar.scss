@@ -1,16 +1,16 @@
 
 .navbar-light .navbar-nav .active > .nav-link {
-  color: #deddfa;
+  color: $light-purple;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #deddfa;
+  color: $light-purple;
 
 }
 
 .navbar-plug {
   justify-content: space-between;
-  background: #191919;
+  background: $black;
 }
 
 .navbar-plug .navbar-collapse {
@@ -19,5 +19,5 @@
 
 .navbar-plug .navbar-brand img {
   width: 40px;
-  color: #deddfa;
+  color: $gray;
 }
