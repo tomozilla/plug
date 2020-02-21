@@ -5,11 +5,11 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @events = Event.near([params[:lat], params[:lon]], 10)
-
     RefreshTokenService.refresh_token(current_user)
     FetchTracksService.downloadTracks(current_user)
     @user = User.first
+
+    @events = Event.near([params[:lat], params[:lon]], 10)
   end
 
   def check_in
