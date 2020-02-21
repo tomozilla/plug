@@ -1,4 +1,4 @@
 import "bootstrap";
+import { findMe } from './user_geolocation';
 
-// import { openPage } from 'tabs';
-// openPage();
+findMe();

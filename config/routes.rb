@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'events/index'
-  get 'events/create'
-  get 'events/show'
   devise_for :users
   root to: 'pages#home'
 
@@ -13,13 +10,15 @@ Rails.application.routes.draw do
     end
   end
 
-
   get "library", to: "pages#library"
 
-
-
-  resources :events, { only: [:index, :create, :show] }
+  resources :events, { only: [:index, :create, :show] } do
+    member do
+      post 'check_in'
+    end
+  end
   resources :tracks, { only: [:create, :delete] }
   resources :artists, { only: [:create, :delete] }
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
