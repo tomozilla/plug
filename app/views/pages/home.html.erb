@@ -9,6 +9,8 @@
   </div>
 </div>
   <% unless @tracks.nil? %>
+  <div class="row justify-content-center">
+  <div class="cards">
     <div >
         <% @tracks.each do |track| %>
           <% track.artists.each do |artist| %>
@@ -22,6 +24,8 @@
       <%= render "shared/track_card", track: track %>
       <% end %>
     </div>
+  </div>
+  </div>
   <% end %>
 
 <div class="footer">
