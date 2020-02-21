@@ -8,7 +8,6 @@ class EventsController < ApplicationController
     RefreshTokenService.refresh_token(current_user)
     FetchTracksService.downloadTracks(current_user)
     @user = User.first
-
     @events = Event.near([params[:lat], params[:lon]], 10)
   end
 

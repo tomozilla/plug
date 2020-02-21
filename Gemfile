@@ -16,7 +16,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 gem 'geocoder'
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'rest-client'
 gem 'newrelic_rpm'
