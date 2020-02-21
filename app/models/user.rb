@@ -32,5 +32,4 @@ class User < ApplicationRecord
   def favorited_tracks
     tracks.joins(:tracks_users).where.not(tracks_users: { event: nil }).distinct
   end
-
 end
