@@ -25,6 +25,10 @@ class User < ApplicationRecord
     return user
   end
 
+  def access_token_expired?
+    (Time.now - self.updated_at) > 3300
+  end
+
   def favorited_tracks
     tracks.joins(:tracks_users).where.not(tracks_users: { event: nil }).distinct
   end
