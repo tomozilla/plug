@@ -6,6 +6,10 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.near([params[:lat], params[:lon]], 10)
+
+    RefreshTokenService.refresh_token(current_user)
+    FetchTracksService.downloadTracks(current_user)
+    @user = User.first
   end
 
   def check_in
@@ -34,14 +38,10 @@ class EventsController < ApplicationController
   end
 
   def show
-    # params[:id]
   end
 
   def event_params
     params.require(:event).permit(:date, :venue, :title, :artist)
   end
 
-  def users_event_params
-    params.require(:users_event).permit(:user_id, :event_id)
-  end
 end

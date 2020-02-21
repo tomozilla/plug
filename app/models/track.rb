@@ -1,8 +1,8 @@
 class Track < ApplicationRecord
-  has_many :tracksUsers
-  has_many :artistsTracks
-  has_many :artists, through: :artistsTracks
-  has_many :users, through: :tracksUsers
+  has_many :tracks_users
+  has_many :artists_tracks
+  has_many :artists, through: :artists_tracks
+  has_many :events, through: :tracks_users
   validates :name, presence: true
   validates :album, presence: true
   validates :spotify_id, presence: true

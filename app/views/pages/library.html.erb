@@ -1,1 +1,53 @@
-library.html.erb
+
+
+
+  <div class="container">
+
+    <div class="col-10 col-lg-12">
+       <div class="search-bar">
+            <%= form_tag library_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Find the events"
+              %>
+              <div class="search">
+              <%= submit_tag "Search", class: "btn btn-primary" %>
+            <% end %>
+            </div>
+          </div>
+      <div class=decorated-box>
+
+
+      <nav>
+        <div class="container">
+        <div class="row justify-content-center">
+
+        <div class="title" >Your favourite songs by event</div>
+        </div>
+        <div class="row justify-content-center">
+
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Artists</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Tracks</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <% @tracks.each do |track| %>
+              <% track.artists.each do |artist| %>
+              <%= render "shared/artist_card", artist: artist %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <% @tracks.each do |track| %>
+            <%= render "shared/track_card", track: track %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
