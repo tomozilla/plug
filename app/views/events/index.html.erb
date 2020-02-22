@@ -13,7 +13,7 @@
       <% else %>
         <%= image_tag("artist.png") %>
       <% end %>
-        <div>
+        <%= link_to "Confirm", check_in_event_path(@main_event), method: :post, class: "btn btn-gradient" %>
           <h2><%= "Event title here" %></h2>
           <p><%= "Event description here" %></p>
         <h2 class="card-trip-venue"><%= "Shibuya Scramble" %></h2>

@@ -8,12 +8,18 @@
   // box-shadow: 0 0 5px rgba(0,0,0,0.2);
   // border-radius: 25px;
   // background: #FEFFFE;
+  background-size: cover;
+  background-position: center;
+
 }
 
 .card-event > img {
   height: 400px;
   width: 100%;
   object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
 }
 
 .card-event h1 {
@@ -30,6 +36,7 @@
   color: #C9C9EE;
 }
 
+<<<<<<< HEAD
 .card-event .card-event-title {
   color: $blue;
 }
@@ -48,3 +55,5 @@
   top: -20px;
   width: 40px;
 }
+=======
+>>>>>>> 2ac90e20d2277c01680de30c2719fce23e4f007b
