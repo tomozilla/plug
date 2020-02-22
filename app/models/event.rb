@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   has_one_attached :photo
-  after_create :retrieve_artist_image
+  # after_create :retrieve_artist_image
   # , if: :will_save_change_to_address?
   def retrieve_artist_image
     require "open-uri"

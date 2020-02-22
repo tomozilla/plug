@@ -12,8 +12,8 @@ puts "Artists Destroyed"
 # puts "Tracks Destroyed"
 Event.destroy_all
 puts "Events Destroyed"
-User.destroy_all
-puts "Users Destroyed"
+# User.destroy_all
+# puts "Users Destroyed"
 
 puts "Start Updating databse"
 location_choice = ["Impact Hub", "Lawson", "Maruetsu"]
@@ -26,18 +26,22 @@ users = [
     password: "111111",
     refresh_token: "AQCmWGtUugm21ldmIHvJr9-MJA6-r48oUGE5I7LvUzKveBYGIS171EDlJqzm7g0hA0S-f7s5yeIYhmfBXYchhZv3hjgwpqO0MTdk5WIt1evmznXnTdD0nzOak1YHYLaT_aM",
     spotify_id: "hyemster"
+  },
+  {
+    email: "paula@plug.com",
+    password: "111111",
+    refresh_token: "AQCwcLA5HAJ9YbgA6BShEAiDgVr6Heo0zGH2QAuk01DH5ZkMwsjmvUbzGU85tUI3FxDjJw5s70KaSl5x3qoKglItb0nO6TdU3F3qyRxGUAswrGT8-3EhaXefgfnaI1SLRGg",
+    spotify_id: "1149899312"
   }
   # {
-  #   email: "paula@plug.com",
-  #   password: "111111"
-  # },
-  # {
   #   email: "tomo@plug.com",
-  #   password: "111111"
+  #   password: "111111",
+  #   refresh_token: "AQCwcLA5HAJ9YbgA6BShEAiDgVr6Heo0zGH2QAuk01DH5ZkMwsjmvUbzGU85tUI3FxDjJw5s70KaSl5x3qoKglItb0nO6TdU3F3qyRxGUAswrGT8-3EhaXefgfnaI1SLRGg",
+  #   spotify_id: "1149899312"
   # }
 ]
 
-users.each { |user| User.create!(user) }
+users.each { |user| User.create(user) }
 
 events = [
   {
