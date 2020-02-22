@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  post "/star", to: "events#star"
+  delete "/star", to: "events#unstar"
+
   namespace :api do
     namespace :v1 do
       get '/login', to: "auth#spotify_request"

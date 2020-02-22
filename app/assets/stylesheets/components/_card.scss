@@ -12,10 +12,18 @@
 
 }
 
+
 .card-product img {
   height: 100%;
   width: 200px;
   object-fit: cover;
+  transition: transform .5s, filter 0.5s ease-in-out;
+  filter: grayscale(40%);
+}
+
+.card-product:hover img {
+filter: grayscale(0);
+transform: scale(1.1);
 }
 
 .card-product h2 {
