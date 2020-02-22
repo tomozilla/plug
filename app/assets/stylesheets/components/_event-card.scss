@@ -1,11 +1,11 @@
 .card-event {
   overflow: hidden;
   height: 500px;
-  // margin: 50px 0;
+  margin: 50px 0;
   background: $black;
   // box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  // padding: 35px 35px;
-  // box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding: 35px 35px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   // border-radius: 25px;
   // background: #FEFFFE;
   background-size: cover;
@@ -13,25 +13,50 @@
 
 }
 
-.card-event > img {
-  height: 400px;
+.card-event img {
+  height: 100%;
   width: 100%;
   object-fit: cover;
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
+  transition: transform .5s, filter 0.5s ease-in-out;
+  filter: grayscale(40%);
+
+}
+
+.card-event:hover img {
+filter: grayscale(0);
+transform: scale(1.1);
 }
 
 .card-event h1 {
   font-size: 36px;
   font-weight: bold;
   color: #403D58;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .card-event p {
   font-size: 18px;
   opacity: .7;
   color: #C9C9EE;
+}
+
+.decorated-box {
+  overflow: hidden;
+  height: 700px;
+  margin: 25px 0;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 15px 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  background: #FEFFFE;
+}
+
+.decorated-box h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #42275A;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
