@@ -10,6 +10,6 @@
   <div class="top-artists">
     <h1>Top 5 artists</h1>
     <% @tracks.each do |track| %>
-      <%= render "shared/track_card", track: track, event: @event %>
+      <%= render "shared/track_card", locals: { track: track, event: @event } %>
       <% end %></div>
 </div>
