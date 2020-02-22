@@ -42,7 +42,7 @@
           </div>
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
             <% @tracks.each do |track| %>
-            <%= render "shared/track_card", track: track %>
+            <%= render "shared/track_card", { track: track, event: track.favorited_from }%>
             <% end %>
           </div>
         </div>
