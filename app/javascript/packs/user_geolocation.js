@@ -2,7 +2,7 @@ function findMe() {
   console.log("getting geolocation")
   const urlParams = new URLSearchParams(window.location.search);
   const myLat = urlParams.get('lat');
-  // console.log(myLat)
+  console.log(myLat)
   if (myLat === null) {
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
