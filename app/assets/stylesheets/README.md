@@ -14,7 +14,7 @@ yarn add bootstrap
 yarn add jquery popper.js
 ```
 
-Ensure you have the following gems in your Rails `Gemfile`
+ Ensure you have the following gems in your Rails `Gemfile`
 
 ```ruby
 # Gemfile
