@@ -5,15 +5,11 @@
     <h1>Top 5 songs</h1>
     <% @tracks.each do |track| %>
       <% track.artists.each do |artist| %>
-      <%= render "shared/artist_card", artist: artist %>
-      <% end %>
-    <% end %>
-  </div>
-
+      <%= render "shared/artist_card", artist: artist, event: @event %>
+      <% end %></div>
   <div class="top-artists">
     <h1>Top 5 artists</h1>
     <% @tracks.each do |track| %>
-      <%= render "shared/track_card", track: track %>
-      <% end %>
-  </div>
+      <%= render "shared/track_card", track: track, event: @event %>
+      <% end %></div>
 </div>
