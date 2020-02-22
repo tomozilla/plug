@@ -3,6 +3,7 @@
 </div>
 
 <div class="cards">
+
 <div class="top-songs">
   <h1>Top 5 songs</h1>
   <% @tracks.each do |track| %>
@@ -14,12 +15,7 @@
 
 <div class="top-artists">
   <h1>Top 5 artists</h1>
-  <% @event_users.each do |user| %>
-    <% user.tracks_users.each do |tracks_user| %>
-    <% artistid = ArtistsTrack.find(tracks_user.track_id).artist_id %>
-    <%= artist = Artist.find(artistid) %>
-    <%= render "shared/artist_card", artist: artist %>
-    <% end %>
-  <% end %>
-</div>
+   <% @tracks.each do |track| %>
+      <%= render "shared/track_card", track: track %>
+      <% end %>
 </div>

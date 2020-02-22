@@ -13,11 +13,11 @@
       <% else %>
         <%= image_tag("artist.png") %>
       <% end %>
-        <div>
-        <p style='margin-top: 16px;'><%= link_to "Confirm", check_in_event_path(@main_event), method: :post %></p>
+
+        <%= link_to "Confirm", check_in_event_path(@main_event), method: :post, class: "btn btn-gradient" %>
           <h2><%= "Event title here" %></h2>
           <p><%= "Event description here" %></p>
-        </div>
+
         <h2 class="card-trip-venue"><%= "Shibuya Scramble" %></h2>
         <img src= <%= "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" %> class="card-trip-venueimg avatar-bordered";>
     <% else %>
