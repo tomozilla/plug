@@ -2,18 +2,24 @@
   overflow: hidden;
   height: 500px;
   // margin: 50px 0;
-  background: $gray;
+  background: $black;
   // box-shadow: 0 0 5px rgba(0,0,0,0.1);
   // padding: 35px 35px;
   // box-shadow: 0 0 5px rgba(0,0,0,0.2);
   // border-radius: 25px;
   // background: #FEFFFE;
+  background-size: cover;
+  background-position: center;
+
 }
 
 .card-event > img {
   height: 400px;
   width: 100%;
   object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
 }
 
 .card-event h1 {
@@ -30,17 +36,3 @@
   color: #C9C9EE;
 }
 
-.card-event .card-event-title {
-
-}
-
-.card-event .card-event-venue {
-
-}
-
-.card-trip-venue .card-trip-venueimg {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
