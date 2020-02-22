@@ -12,7 +12,7 @@ class Event < ApplicationRecord
   def retrieve_artist_image
     require "open-uri"
     require "json"
-    token = {"Authorization" => "Bearer BQDWaGCJwEgfiDCJ47lLSarSVVngVHBmpy-jw_i7Z2PzrTGpw9ztbMjzmgJJd7PX3VD-zaOWRLbsMLXUQ4qU9Ohp8w7nn5lfrV4u2TBwZe_P1zofed2OGDQUV5tKurRiw0oXiXGd6twT79Rl9-xK0Mbv5hXqeboQAu2wWqS1TSJGsNcG8Hu8kBBDcI5xXljFaaWxaMXkb9Zz6Qx6mlrPU5r2Z93P2eYi800_naQMByrXKCap_c3BntOeK1WVXEspHTDx627GnZw"}
+    token = {"Authorization" => "Bearer BQAq5Xumotyx2cuB8zlIFKn2CVdTg7UrnQHteddUhe1mLUVTzlK6Pus-JlZXjOcPEa03r6DIRAaOiMVoZTB1ew4BSLIJk3KeubeKLdPbATND8xUJhMS105MfLIX2OvRO_EbDUlmE3VJLesA"}
     artist_search = "https://api.spotify.com/v1/search?q=#{artist}&type=artist"
     artist_search_serialized = open(artist_search, token).read
     search_result = JSON.parse(artist_search_serialized)

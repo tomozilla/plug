@@ -14,12 +14,9 @@
 
 <div class="top-artists">
   <h1>Top 5 artists</h1>
-  <% @event_users.each do |user| %>
-    <% user.tracks_users.each do |tracks_user| %>
-    <% artistid = ArtistsTrack.find(tracks_user.track_id).artist_id %>
-    <%= artist = Artist.find(artistid) %>
+  <% @artists.each do |artist| %>
+    <%= artist.name %>
     <%= render "shared/artist_card", artist: artist %>
-    <% end %>
   <% end %>
 </div>
 </div>
