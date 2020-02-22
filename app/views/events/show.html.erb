@@ -2,12 +2,12 @@
  <h1> <%=current_user.events.name %></h1>
 </div>
 
+<div class="cards">
 <div class="top-songs">
   <h1>Top 5 songs</h1>
-  <% @event_users.each do |user| %>
-    <% user.tracks_users.each do |tracks_user| %>
-    <%= track = Track.find(tracks_user.track_id) %>
-    <%= render "shared/track_card", track: track %>
+  <% @tracks.each do |track| %>
+    <% track.artists.each do |artist| %>
+    <%= render "shared/artist_card", artist: artist %>
     <% end %>
   <% end %>
 </div>
@@ -21,4 +21,5 @@
     <%= render "shared/artist_card", artist: artist %>
     <% end %>
   <% end %>
+</div>
 </div>

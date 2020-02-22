@@ -4,8 +4,8 @@ class Event < ApplicationRecord
   has_many :tracks_users
   has_many :favorited_tracks, through: :tracks_users, source: :track
   validates :venue, presence: true
-  geocoded_by :venue
-  after_validation :geocode
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   has_one_attached :photo
   after_create :retrieve_artist_image
   # , if: :will_save_change_to_address?
