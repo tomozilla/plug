@@ -13,14 +13,16 @@ class User < ApplicationRecord
 
   def self.find_for_spotify(spotify_id:, email:, access_token:, refresh_token:)
     user = User.find_by(spotify_id: spotify_id)
-    if user
+    unless user.nil?
       user.update(access_token: access_token, refresh_token: refresh_token)
+      puts "User token updated"
     else
       user = User.new(email: email, spotify_id: spotify_id)
       user.password = Devise.friendly_token[0,20]
       user.access_token = access_token
-      user.refresh_token = refresh_token
-      user.save
+      user.refresh_token = refresh_token  
+      user.save!
+      puts "User saved"
     end
     return user
   end
@@ -32,5 +34,4 @@ class User < ApplicationRecord
   def favorited_tracks
     tracks.joins(:tracks_users).where.not(tracks_users: { event: nil }).distinct
   end
-
 end

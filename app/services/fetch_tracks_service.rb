@@ -1,12 +1,9 @@
 class FetchTracksService
-  SLACK_API_TOKEN = "xoxb-843568960375-867449413506-41hdhOLmF8OxaeEtFeSvbEf2"
-  SPOTIFY_CLIENT_ID = "80a4b6a4fb4f4add9b6a8289eb936864"
-  SPOTIFY_CLIENT_SECRET = "4542e9e43c5845ee8fae652b24ebffe9"
   def self.downloadTracks(user)
     header = {
       Authorization: "Bearer #{user.access_token}" 
     }
-    tracks_response = RestClient.get("https://api.spotify.com/v1/me/tracks?limit=10", header)
+    tracks_response = RestClient.get("https://api.spotify.com/v1/me/tracks?limit=50", header)
     tracks_params = JSON.parse(tracks_response)
     tracks_params["items"].each do |item|
       spotify_id = item["track"]["id"]

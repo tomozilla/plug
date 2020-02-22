@@ -6,18 +6,16 @@ class TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     @track.save
-
     redirect_to dashboard_path
   end
-
-
 
   def update
     if @track.update(track_params)
       redirect_to dashboard_path
+    end
   end
 
-private
+  private
 
   def track_params
     params.require(:track).permit(:name, :album, :artists)
@@ -27,5 +25,4 @@ private
     @track = Track.find(params[:id])
     @track.destroy
   end
-
 end
