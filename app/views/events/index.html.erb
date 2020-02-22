@@ -3,25 +3,23 @@
   <div class="row justify-content-center">
     <h1><%= "Choose the event you are at to get plugged" %></h1>
     <div class="card-event">
-    <% @events.each do |event| %>
-      <%= event.venue %>
-      <%= event.title %>
-      <%= event.artist %>
-      <% if event.photo.attached? %>
-        <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= @main_event.venue %>
+    <%= @main_event.title %>
+    <%= @main_event.artist %>
+      <% if @main_event.photo.attached? %>
+        <%= cl_image_tag @main_event.photo.key%>
       <% else %>
         <%= image_tag("artist.png") %>
       <% end %>
       <div class="card-event-title">
         <div>
-        <p style='margin-top: 16px;'><%= link_to "Confirm", check_in_event_path(event), method: :post %></p>
+        <p style='margin-top: 16px;'><%= link_to "Confirm", check_in_event_path(@main_event), method: :post %></p>
           <h2><%= "Event title here" %></h2>
           <p><%= "Event description here" %></p>
         </div>
         <h2 class="card-trip-venue"><%= "Shibuya Scramble" %></h2>
         <img src= <%= "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" %> class="card-trip-venueimg avatar-bordered";>
       </div>
-    <% end %>
     </div>
   </div>
 </div>
