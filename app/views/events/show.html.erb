@@ -5,7 +5,7 @@
     <h1>Top 5 songs</h1>
     <% @tracks.each do |track| %>
       <% track.artists.each do |artist| %>
-      <%= render "shared/artist_card", artist: artist, event: @event %>
+      <%= render "shared/artist_card", locals: { artist: artist, event: @event } %>
       <% end %></div>
   <div class="top-artists">
     <h1>Top 5 artists</h1>
