@@ -8,6 +8,8 @@
   align-items: center;
   margin: 50px 50px;
   border-radius: 15px;
+
+
 }
 
 .card-product img {
@@ -17,13 +19,15 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
+
 .card-product p {
   font-size: 12px;
+  color: #42275A;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -32,5 +36,15 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+
 }
 
+.card-product .card-product-infos p {
+  color: #42275A;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 5px;
+  margin-top: 8px;
+
+}
