@@ -14,21 +14,21 @@
     <!-- <div class="row justify-content-center"> -->
 
       <h1>See the lists of trending songs and artists now</h1>
-    <div class="cards">
-      <div >
-          <% @tracks.each do |track| %>
-            <% track.artists.each do |artist| %>
-            <%= render "shared/artist_card", artist: artist %>
+      <div class="cards">
+        <div >
+            <% @tracks.each do |track| %>
+              <% track.artists.each do |artist| %>
+              <%= render "shared/artist_card", locals: { artist: artist, event: nil } %>
+              <% end %>
             <% end %>
-          <% end %>
-      </div>
+        </div>
 
-      <div >
-        <% @tracks.each do |track| %>
-        <%= render "shared/track_card", track: track %>
-        <% end %>
+        <div >
+          <% @tracks.each do |track| %>
+          <%= render "shared/track_card", locals: { track: track, event: nil } %>
+          <% end %>
+        </div>
       </div>
-    </div>
     </div>
     </div>
 </div>

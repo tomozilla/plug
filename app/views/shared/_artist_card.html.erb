@@ -5,10 +5,10 @@
           <div class="card-product-infos">
             <h2><%= artist.name %></h2>
             <p><%= artist.genres %></p>
-            <%= link_to star_path, class: "fas fa-star", method: :post %>
-
+            <% unless locals[:event].nil? %>
+              <%= link_to star_path(artist: locals[:artist], event: locals[:event]), class: "fas fa-star", method: :post %>
+            <% end %>
           </div>
         </div>
-
     </div>
 </div>
