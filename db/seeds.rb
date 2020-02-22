@@ -8,8 +8,8 @@ UsersEvent.destroy_all
 puts "Users_events Destroyed"
 Artist.destroy_all
 puts "Artists Destroyed"
-Track.destroy_all
-puts "Tracks Destroyed"
+# Track.destroy_all
+# puts "Tracks Destroyed"
 Event.destroy_all
 puts "Events Destroyed"
 User.destroy_all
@@ -20,12 +20,57 @@ location_choice = ["Impact Hub", "Lawson", "Maruetsu"]
 address_choice = ["Tokyo, Meguro City, Meguro, 2−11−3", "3 Chome-9-1 Meguro, Meguro City, Tokyo", "2 Chome-21-23 Shimomeguro, Meguro City, Tokyo"]
 artist_choice = ["Justin Bieber", "Drake", "Kaytranada"]
 
-i = 0
-3.times do
-  Event.create!(
+users = [
+  {
+    email: "grace@plug.com",
+    password: "111111",
+    refresh_token: "AQCmWGtUugm21ldmIHvJr9-MJA6-r48oUGE5I7LvUzKveBYGIS171EDlJqzm7g0hA0S-f7s5yeIYhmfBXYchhZv3hjgwpqO0MTdk5WIt1evmznXnTdD0nzOak1YHYLaT_aM",
+    spotify_id: "hyemster"
+  }
+  # {
+  #   email: "paula@plug.com",
+  #   password: "111111"
+  # },
+  # {
+  #   email: "tomo@plug.com",
+  #   password: "111111"
+  # }
+]
+
+users.each { |user| User.create!(user) }
+
+events = [
+  {
     date: Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now),
-    address: address_choice[i],
-    venue: location_choice[i],
-    artist: artist_choice[i])
-  i = i + 1
+    venue: "Impact Hub",
+    address: "Tokyo, Meguro City, Meguro, 2−11−3",
+    artist: "Justin Bieber"
+  },
+    {
+    date: Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now),
+    venue: "Impact Hub",
+    address: "Tokyo, Meguro City, Meguro, 2−11−3",
+    artist: "Justin Bieber"
+  },
+  {
+    date: Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now),
+    venue: "Impact Hub",
+    address: "Tokyo, Meguro City, Meguro, 2−11−3",
+    artist: "Justin Bieber"
+  }
+]
+
+events.each do |event|
+  new_event = Event.create(event)
+  5.times do
+    UsersEvent.create!(
+      user: User.all.sample,
+      event: new_event)
+  end
+  5.times do
+    TracksUser.create!(
+      event: new_event,
+      user: new_event.users.sample,
+      track: Track.all.sample)
+  end
 end
