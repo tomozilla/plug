@@ -3,11 +3,10 @@
         <div class="card-product">
           <img src="https://images.unsplash.com/photo-1525908034958-2c082cd0fed2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" />
           <div class="card-product-infos">
-          <% raise %>
             <h2><%=  locals[:artist].name %></h2>
             <p><%=  locals[:artist].genres %></p>
             <% unless locals[:event].nil? %>
-              <%= link_to "", star_path(artist: locals[:artist], event: locals[:event]), class: "fas fa-star", method: :post  %>
+              <%= link_to "", star_artist_path(artist: locals[:artist], event: locals[:event]), class: "fas fa-star", method: :post  %>
             <% end %>
           </div>
         </div>
