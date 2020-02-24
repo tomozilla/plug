@@ -27,8 +27,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.includes(users: :tracks).find(params[:id])
-    @users = @event.users
-
+    @users = @event.users.where.not(id: current_user.id)
     @track_counter = {}
     @artist_counter = {}
 
@@ -48,11 +47,26 @@ class EventsController < ApplicationController
     end
   end
 
+  def star_track 
+    TracksUser.create!(
+      event: Event.find(params["event"].to_i),
+      track: Track.find(params["track"].to_i),
+      source: "events",
+      user: current_user)
+      redirect_to event_path(params["event"])
+  end
+
+  def unstar_track
+    TracksUser.find_by(
+      event: Event.find(params["event"].to_i),
+      track: Track.find(params["track"].to_i),
+      source: "events",
+      user: current_user).destroy
+    redirect_to event_path(params["event"])
+  end
+
   def event_params
     params.require(:event).permit(:date, :venue, :title, :artist)
   end
 
-  def star
-    raise
-  end
 end

@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  post "/star", to: "events#star"
-  delete "/star", to: "events#unstar"
+  post "/star_track", to: "events#star_track"
+  delete "/star_track", to: "events#unstar_track"
+
+  post "/star_artist", to: "events#star_artist"
+  delete "/star_artist", to: "events#unstar_artist"
 
   namespace :api do
     namespace :v1 do
