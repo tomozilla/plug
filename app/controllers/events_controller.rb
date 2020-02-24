@@ -48,11 +48,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def star
+    
+    tracksUser = TracksUser.new(event: params["event"], )
+    tracksUser.save!
+  end
+
   def event_params
     params.require(:event).permit(:date, :venue, :title, :artist)
   end
 
-  def star
-    raise
-  end
 end
