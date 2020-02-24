@@ -6,7 +6,7 @@
             <h2><%=  locals[:artist].name %></h2>
             <p><%=  locals[:artist].genres %></p>
             <% unless locals[:event].nil? %>
-              <%= link_to star_path(artist: locals[:artist], event: locals[:event]), class: "fas fa-star", method: :post %>
+              <%= link_to "", star_artist_path(artist: locals[:artist], event: locals[:event]), class: "fas fa-star", method: :post  %>
             <% end %>
           </div>
         </div>

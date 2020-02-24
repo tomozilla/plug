@@ -3,7 +3,7 @@ class FetchTracksService
     header = {
       Authorization: "Bearer #{user.access_token}" 
     }
-    tracks_response = RestClient.get("https://api.spotify.com/v1/me/tracks?limit=50", header)
+    p tracks_response = RestClient.get("https://api.spotify.com/v1/me/tracks?limit=50", header)
     tracks_params = JSON.parse(tracks_response)
     tracks_params["items"].each do |item|
       spotify_id = item["track"]["id"]
