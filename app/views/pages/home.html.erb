@@ -8,18 +8,11 @@
     <%= link_to "Get started", events_path, class: "btn btn-gradient" %></h1>
   </div>
 </div>
-   <div class="comntainer">
+   <div class="container">
       <div class="row justify-content-center">
       <% unless @tracks.nil? %>
-      <h1>See the lists of trending songs and artists now</h1>
+      <h1>See the lists of trending songs now</h1>
       <div class="cards">
-        <div >
-            <% @tracks.each do |track| %>
-              <% track.artists.each do |artist| %>
-              <%= render "shared/artist_card", locals: { artist: artist, event: nil } %>
-              <% end %>
-            <% end %>
-        </div>
         <div >
           <% @tracks.each do |track| %>
           <%= render "shared/track_card", locals: { track: track, event: nil } %>
