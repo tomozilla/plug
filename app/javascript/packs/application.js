@@ -1,4 +1,7 @@
 import "bootstrap";
 import { findMe } from './user_geolocation';
 
-findMe();
+if (document.querySelector("#event-index")) {
+  findMe();
+}
+
