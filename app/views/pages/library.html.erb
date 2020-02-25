@@ -27,7 +27,8 @@
         <div class="tab-content" id="nav-tabContent">
           <div id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
             <% @tracks.each do |track| %>
-            <%= render "shared/track_card", locals: { track: track } %><% end %>
+              <%= render "shared/track_card", locals: { track: track } %>
+            <% end %>
           </div>
         </div>
       </div>

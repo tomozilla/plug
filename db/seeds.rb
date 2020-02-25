@@ -36,10 +36,11 @@ users = [
     updated_at: "2020-02-20 11:28:40"
   },
   {
-     email: "tomo@plug.com",
-     password: "111111",
-     refresh_token: "AQA6r2BbAX3pQlmj_f6jnYjn6ovaIYkqVdJ46bSTHIeR22uVtPWjXKDL6kXNOZPLX33rJ8g4W3vIIsKNpc53DXYrezArzG_L80NOLgquTcsdspRsDtK3FCWcwXXJWr5b4XU",
-     spotify_id: "1149899312"
+    email: "tomo@plug.com",
+    password: "111111",
+    refresh_token: "AQA6r2BbAX3pQlmj_f6jnYjn6ovaIYkqVdJ46bSTHIeR22uVtPWjXKDL6kXNOZPLX33rJ8g4W3vIIsKNpc53DXYrezArzG_L80NOLgquTcsdspRsDtK3FCWcwXXJWr5b4XU",
+    spotify_id: "1149899312",
+    updated_at: "2020-02-20 11:28:40"
   }
 ]
 
