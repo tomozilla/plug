@@ -6,4 +6,8 @@ class Track < ApplicationRecord
   validates :name, presence: true
   validates :album, presence: true
   validates :spotify_id, presence: true
+
+  def favorited_from
+    return Event.first
+  end
 end

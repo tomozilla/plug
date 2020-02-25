@@ -6,5 +6,6 @@
     <h1>Top 5 songs</h1>
     <% @tracks.each do |track| %>
       <%= render "shared/track_card", locals: { track: track, event: @event } %>
-      <% end %></div>
+    <% end %>
+    </div>
 </div>
