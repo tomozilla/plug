@@ -11,41 +11,34 @@
         <p><%= @main_event.artist %></p>
       </div>
       <% if @main_event.photo.attached? %>
-        <%= cl_image_tag @main_event.photo.key, crop: :fill %>
+        <img><%= cl_image_tag @main_event.photo.key, crop: :fill %></img>
       <% end %>
     <% else %>
         <%= "No event found" %>
         <%= image_tag("artist.png") %>
     <% end %>
-    </div >
   </div>
-</div>
-
-
-<div class="container">
-  <div class="row justify-content-center">
     <% if !@main_event.nil? %>
       <%= link_to "Confirm", check_in_event_path(@main_event), method: :post, class: "btn btn-gradient confirm-button" %>
-      <img src= <%= "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" %> class="card-trip-venueimg avatar-bordered";>
       <% @sub_events.each do |sub_event| %>
-      <div class="decorated-box">
-        <div class="card-event">
-          <div class="col-12 col-md-6 col-lg-4">
-            <h1><%= sub_event.venue %></h1>
-            <h1><%= sub_event.title %></h1>
-            <p><%= sub_event.artist %></p>
-            <% if sub_event.photo.attached? %>
-            <%= cl_image_tag sub_event.photo.key, crop: :fill %>
-            <% end %>
+        <div class="card-product">
+          <div class="card-product-infos">
+              <h2><%= sub_event.venue %></h2>
+              <h2><%= sub_event.title %></h2>
+              <p><%= sub_event.artist %></p>
+              <% if sub_event.photo.attached? %>
+              <%= cl_image_tag sub_event.photo.key, crop: :fill %>
+              <% end %>
+            </div>
           </div>
-        </div>
-      </div>
-      <%= link_to "Confirm", check_in_event_path(sub_event), method: :post, class: "btn btn-gradient" %>
+
+        <%= link_to "Confirm", check_in_event_path(sub_event), method: :post, class: "btn btn-gradient confirm-button" %>
       <% end %>
     <% else %>
-    <%= "No event found" %>
-    <%= image_tag("artist.png") %>
+      <%= "No event found" %>
+      <%= image_tag("artist.png") %>
 
     <% end %>
+    </div >
   </div>
 </div>
