@@ -1,44 +1,33 @@
-<div class="cta">
-  <h2>Check the events around you.</h2>
-  <p>Connect with people and share your music</p>
-  <div class="cards">
-    <div class="card-product">
-    <% if !@main_event.nil? %>
-    <!--   <div class="card-product-infos"> -->
-      <div class="card-product-infos">
-        <h2><%= @main_event.venue %></h2>
-        <h2><%= @main_event.title %></h2>
-        <p><%= @main_event.artist %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="cta">
+        <h2>Check the events around you.</h2>
+        <p>Connect with people and share your music</p>
       </div>
-      <% if @main_event.photo.attached? %>
-        <img><%= cl_image_tag @main_event.photo.key, crop: :fill %></img>
-      <% end %>
-    <% else %>
-        <%= "No event found" %>
-        <%= image_tag("artist.png") %>
-    <% end %>
+    </div>
   </div>
-    <% if !@main_event.nil? %>
-      <%= link_to "Confirm", check_in_event_path(@main_event), method: :post, class: "btn btn-gradient confirm-button" %>
+
+    <% if @main_event.nil? %>
+    <div class="row">
+      <div class="col-12 col-lg-3">
+        <%= render "events/card", event: @main_event %>
+      </div>
       <% @sub_events.each do |sub_event| %>
-        <div class="card-product">
-          <div class="card-product-infos">
-              <h2><%= sub_event.venue %></h2>
-              <h2><%= sub_event.title %></h2>
-              <p><%= sub_event.artist %></p>
-              <% if sub_event.photo.attached? %>
-              <%= cl_image_tag sub_event.photo.key, crop: :fill %>
-              <% end %>
-            </div>
+          <div class="col-12 col-lg-3">
+            <%= render "events/card", event: sub_event %>
           </div>
-
-        <%= link_to "Confirm", check_in_event_path(sub_event), method: :post, class: "btn btn-gradient confirm-button" %>
       <% end %>
+    </div>
     <% else %>
-      <%= "No event found" %>
-      <%= image_tag("artist.png") %>
-
+    <div class="row justify-content-md-center">
+      <div class="col-6">
+        <div class="card-product">
+          No event found
+          <%= image_tag("artist.png") %>
+        </div>
+      </div>
     <% end %>
-    </div >
   </div>
 </div>
