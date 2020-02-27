@@ -7,10 +7,11 @@ class EventsController < ApplicationController
   def index
     RefreshTokenService.refresh_token(current_user)
     FetchTracksService.downloadTracks(current_user)
-
     @events = Event.near([params[:lat], params[:lon]], 10)
     if params[:lat] && params[:lon]
       @main_event = @events.first
+      @sub_events = @events[1..3]
+      # raise
     end
   end
 
@@ -47,7 +48,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def star_track 
+  def star_track
     TracksUser.create!(
       event: Event.find(params["event"].to_i),
       track: Track.find(params["track"].to_i),
