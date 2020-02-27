@@ -21,6 +21,7 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'rest-client'
 gem 'simple_token_authentication'
 gem 'newrelic_rpm'
+gem 'rspotify'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

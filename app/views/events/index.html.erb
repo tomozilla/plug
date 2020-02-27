@@ -13,7 +13,7 @@
       <% if @main_event.photo.attached? %>
         <%= cl_image_tag @main_event.photo.key, crop: :fill %>
       <% else %>
-        <%= image_tag("artist.png", size: "500x500") %>
+        <%= image_tag("artist.png", size: "10x10") %>
       <% end %>
 
       </div >
