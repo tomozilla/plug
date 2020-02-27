@@ -2,37 +2,26 @@
 <div class="home-video-wrapper">
   <%= video_tag "concert.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: 'home_video' %>
   <div class="container">
-    <h1><strong>PLUG</strong></h1>
-    <h1> yourself into fresh, niche, curated music list!</h1>
-    <p>Get your playlist once enjoying yourself at the concert!</p>
-    <%= link_to "Get started", events_path, class: "btn btn-gradient", id: "event-index" %></h1>
+    <h1><strong>PLUG IN</strong></h1>
+    <p>Fresh, niche, curated  </p>
+    <p>music list at your fingertips!</p>
+    <%= link_to "Get started", events_path, class: "btn btn-gradient" %>
   </div>
 </div>
-   <div class="container">
-      <div class="row justify-content-center">
-      <% unless @tracks.nil? %>
-      <h1>See the lists of trending songs now</h1>
-      <div class="cards">
-        <div >
-          <% @tracks.each do |track| %>
-          <%= render "shared/track_card", locals: { track: track, event: nil } %>
-          <% end %>
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
-    </div>
-</div>
-  <% end %>
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Plug
   </div>
 </div>
