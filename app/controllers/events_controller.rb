@@ -10,6 +10,8 @@ class EventsController < ApplicationController
     @events = Event.near([params[:lat], params[:lon]], 10)
     if params[:lat] && params[:lon]
       @main_event = @events.first
+      @sub_events = @events[1..3]
+      # raise
     end
   end
 
