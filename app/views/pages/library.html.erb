@@ -1,5 +1,11 @@
   <div class="container">
     <div class="col-10 col-lg-12">
+      <%= form_for :playlist, as: :get, url: export_path, method: :get, html: { class: "new_post", id: "new_post" } do |f| %>
+        <div class="form-group">
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
       <div class="search-bar">
           <%= form_tag library_path, method: :get do %>
             <%= text_field_tag :query,
@@ -31,8 +37,5 @@
             <% end %>
           </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <%= link_to "Export your list", root_path, class: "btn btn-gradient" %>
       </div>
   </div>
