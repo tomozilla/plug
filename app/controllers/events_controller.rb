@@ -45,6 +45,7 @@ class EventsController < ApplicationController
 
       @tracks = @track_counter.sort_by { |track_id, count| count[0] }.take(5).map { |_, count| count.second }
       @artists = @artist_counter.sort_by { |artist_id, count| count[0] }.take(5).map { |_, count| count.second }
+    raise
     end
   end
 

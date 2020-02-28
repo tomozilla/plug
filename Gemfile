@@ -22,6 +22,8 @@ gem 'rest-client'
 gem 'simple_token_authentication'
 gem 'newrelic_rpm'
 gem 'rspotify'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
