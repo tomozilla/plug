@@ -3,9 +3,10 @@
 <h1> <%=@event.venue %></h1></div>
 <div class="cards">
   <div class="top-songs">
-    <h1>Top 5 songs</h1>
+    <h1>Top 20 songs</h1>
     <% @tracks.each do |track| %>
-      <%= render "shared/track_card", locals: { track: track, event: @event } %>
+      <% number_of_likes = @track_counter[track.id][0] %>
+      <%= render "shared/track_card", locals: { track: track, event: @event, likes: number_of_likes } %>
     <% end %>
     </div>
 </div>
