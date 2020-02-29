@@ -54,7 +54,7 @@ class EventsController < ApplicationController
       track: Track.find(params["track"].to_i),
       source: "events",
       user: current_user)
-      redirect_to event_path(params["event"])
+    redirect_to event_path(params["event"])
   end
 
   def unstar_track
