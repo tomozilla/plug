@@ -11,6 +11,7 @@ class RefreshTokenService
       auth_params = JSON.parse(auth_response)
       user.update(access_token: auth_params["access_token"])
       user.save!
+      puts "Current User's Token was renewd"
     else
       puts "Current User's Token is not expired"
     end
