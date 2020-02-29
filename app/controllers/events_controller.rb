@@ -11,7 +11,6 @@ class EventsController < ApplicationController
     if params[:lat] && params[:lon]
       @main_event = @events.first
       @sub_events = @events[1..3]
-      # raise
     end
   end
 

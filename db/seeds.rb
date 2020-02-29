@@ -6,8 +6,8 @@ TracksUser.destroy_all
 puts "TracksUsers Destroyed"
 UsersEvent.destroy_all
 puts "Users_events Destroyed"
-Artist.destroy_all
-puts "Artists Destroyed"
+# Artist.destroy_all
+# puts "Artists Destroyed"
 Track.destroy_all
 puts "Tracks Destroyed"
 Event.destroy_all
