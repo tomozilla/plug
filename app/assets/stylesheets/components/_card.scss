@@ -1,13 +1,13 @@
 .card-product {
   overflow: hidden;
   height: 200px;
-  weight: 600px;
-  background: white;
+  width: 380px;
+  background: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 50px 50px;
-  border-radius: 15px;
+  margin-top: 50px;
+
 
 
 }
@@ -30,16 +30,39 @@ transform: scale(1.1);
   font-size: 20px;
   font-weight: bold;
   margin: 0;
+  color: #E4C1F9;
 }
 
 
 .card-product p {
   font-size: 12px;
-  color: #42275A;
+  color: #E4C1F9;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+}
+
+.card-product .confirm-button {
+  position: absolute;
+  right: 0px;
+  top: -20px;
+  width: 80px;
+  padding: 8px 24px;
+  // background-color: #734B6D;
+  border: none;
+  color: white;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  // display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+
 }
 
 .card-product .card-product-infos {
@@ -56,3 +79,18 @@ transform: scale(1.1);
   margin-top: 8px;
 
 }
+
+body {
+  background: #242331;
+}
+
+// @media (min-device-width:600px) {
+//     img[data-src-600px] {
+//         content: attr(data-src-600px, url);
+//     }
+// }
+// @media (min-device-width:800px) {
+//     img[data-src-800px] {
+//         content: attr(data-src-800px, url);
+//     }
+// }

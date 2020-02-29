@@ -1,43 +1,30 @@
-<div class="container">
- <div class="row justify-content-center">
-  <h2>Choose the event you are at to get plugged</h2>
-  <div class="decorated-box">
-    <% if @main_event.nil? == false %>
-    <div class="card-event">
-      <h1><%= @main_event.venue %></h1>
-      <h1><%= @main_event.title %></h1>
-      <p><%= @main_event.artist %></p>
-      <% if @main_event.photo.attached? %>
-      <%= cl_image_tag @main_event.photo.key, crop: :fill %>
-      <% else %>
-      <%= "No event found" %>
-      <% end %>
-    </div >
-    <div class="container">
-      <div class="row justify-content-center">
-        <%= link_to "Confirm", check_in_event_path(@main_event), method: :post, class: "btn btn-gradient" %>
-        <img src= <%= "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" %> class="card-trip-venueimg avatar-bordered";>
-        <% @sub_events.each do |sub_event| %>
-        <div class="decorated-box">
-          <div class="card-event">
-            <div class="col-12 col-md-6 col-lg-4">
-              <h1><%= sub_event.venue %></h1>
-              <h1><%= sub_event.title %></h1>
-              <p><%= sub_event.artist %></p>
-              <% if sub_event.photo.attached? %>
-              <%= cl_image_tag sub_event.photo.key, crop: :fill %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <%= link_to "Confirm", check_in_event_path(sub_event), method: :post, class: "btn btn-gradient" %>
-        <% end %>
-        <% else %>
-        <%= "No event found" %>
-        <% end %>
-      </div>
-    </div>
+
+  <div class="cta">
+    <h2>Check the events around you.</h2>
+    <p>Connect with people and share your music</p>
   </div>
-</div>
-</div>
+
+  <div class="container">
+    <% if @main_event.nil? == false %>
+    <div class="row">
+      <div class="col-12 col-lg-3">
+        <%= render "events/card", event: @main_event %>
+      </div>
+
+      <% @sub_events.each do |sub_event| %>
+          <div class="col-12 col-lg-3">
+            <%= render "events/card", event: sub_event %>
+          </div>
+      <% end %>
+    </div>
+    <% else %>
+    <div class="row justify-content-md-center">
+      <div class="col-6">
+        <div class="card-product">
+          <p>No event found</p>
+          <%= image_tag("artist.png") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

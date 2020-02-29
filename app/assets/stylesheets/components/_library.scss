@@ -16,7 +16,7 @@
   float: center;
   font-size: 1.4em;
   font-weight: 400;
-  padding: 20px 20px;
+  // padding: 20px 20px;
   color: #AAA;
 
 }
@@ -138,14 +138,5 @@
   }
 }
 
-.decorated-box {
-  overflow: hidden;
-  margin: 50px 0;
-  background: white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  padding: 35px 35px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  border-radius: 15px;
-  background: #FEFFFE;
-}
+
 
