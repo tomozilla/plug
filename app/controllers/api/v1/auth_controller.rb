@@ -14,6 +14,7 @@ class Api::V1::AuthController < ApplicationController
       user-modify-playback-state
       user-read-private
       user-top-read
+      playlist-modify-private
       playlist-modify-public",
      show_dialog: true
     }

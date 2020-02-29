@@ -42,9 +42,8 @@ class EventsController < ApplicationController
         end
       end
 
-      @tracks = @track_counter.sort_by { |track_id, count| count[0] }.take(5).map { |_, count| count.second }
-      @artists = @artist_counter.sort_by { |artist_id, count| count[0] }.take(5).map { |_, count| count.second }
-    raise
+      @tracks = @track_counter.sort_by { |track_id, data| data.first }.take(20).map { |_, data| data.second }
+      @artists = @artist_counter.sort_by { |artist_id, count| count[0] }.take(20).map { |_, count| count.second }
     end
   end
 
@@ -54,7 +53,7 @@ class EventsController < ApplicationController
       track: Track.find(params["track"].to_i),
       source: "events",
       user: current_user)
-      redirect_to event_path(params["event"])
+    redirect_to event_path(params["event"])
   end
 
   def unstar_track

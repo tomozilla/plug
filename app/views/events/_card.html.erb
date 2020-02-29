@@ -1,0 +1,10 @@
+<div class="card-product">
+  <div class="card-product-infos">
+    <h2><%= event.venue %></h2>
+    <h2><%= event.title %></h2>
+    <p><%= event.artist %></p>
+  </div>
+  <% if event.photo.attached? %>
+    <%= cl_image_tag event.photo.key, crop: :fill %>
+  <% end %>
+</div>

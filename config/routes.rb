@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get "/export", to: "pages#export_spotify"
   post "/star_track", to: "events#star_track"
   delete "/star_track", to: "events#unstar_track"
 
