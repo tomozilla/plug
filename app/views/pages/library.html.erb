@@ -1,14 +1,14 @@
 
   <div class="cta">
-     <h2>Immerse yourself with new music</h2>
-     <p>Get to know favourite songs of folks around</p>
+     <h2>Export your customized playlist to Spotify</h2>
+     <!-- s -->
   </div>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
     <%= form_for :playlist, as: :get, url: export_path, method: :get, html: { class: "new_post", id: "new_post" } do |f| %>
       <div class="form-group">
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Type in a playlist name" %>
         <%= f.submit class: 'btn btn-gradient' %>
       </div>
       <% end %>
@@ -21,22 +21,19 @@
       <div class="carousel-item active">
         <img class="d-block w-100" src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80" alt="First slide">
         <div class="carousel-caption d-block d-md-block">
-          <h5>Maroon 5</h5>
-          <p>Sugar</p>
+          <h5>The Room</h5>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" alt="Second slide">
         <div class="carousel-caption d-block d-md-block">
-          <h5>Black Keys</h5>
-          <p>Lonely Boy</p>
+          <h5>Goldlink</h5>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="Third slide">
         <div class="carousel-caption d-block d-md-block">
-          <h5>Alabama Shakes</h5>
-          <p>This feeling</p>
+          <h5>Sel Octagon Tokyo</h5>
         </div>
       </div>
     </div>
