@@ -1,17 +1,20 @@
-<div class="container">   
+
   <div class="cta">
      <h2>Immerse yourself with new music</h2>
      <p>Get to know favourite songs of folks around</p>
   </div>
-
+<div class="container">
   <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
     <%= form_for :playlist, as: :get, url: export_path, method: :get, html: { class: "new_post", id: "new_post" } do |f| %>
       <div class="form-group">
         <%= f.text_field :name, class: 'form-control' %>
+        <%= f.submit class: 'btn btn-gradient' %>
       </div>
-      <%= f.submit class: 'btn btn-gradient' %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+</div>
 
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
