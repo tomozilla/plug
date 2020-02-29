@@ -1,27 +1,26 @@
 <div class="navbar sticky-top navbar-expand-sm navbar-light navbar-plug">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "plug_logo.png" %>
-    <%= image_tag "spotify.png" %>
-    <% end %>
+  <%= image_tag "plug_logo.png" %>
+  <%= image_tag "spotify.png" %>
+  <% end %>
 
-  <%= image_tag "artist.png", class: "avatar dropdown-toggle", 'aria-haspopup': true, 'aria-expanded': false %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span><%= image_tag "user_1.png", class: "avatar dropdown-toggle", 'aria-haspopup': true, 'aria-expanded': false %></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Library",library_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Events", events_path, class: "nav-link", id: "event-index" %>
-        </li>
+      <li class="nav-item active">
+        <%= link_to "Library",library_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Events", events_path, class: "nav-link", id: "event-index" %>
+      </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", api_v1_login_path, class: "btn btn-ghost" %>
-        </li>
+      <li class="nav-item">
+        <%= link_to "Login", api_v1_login_path, class: "btn btn-ghost" %>
+      </li>
       <% end %>
     </ul>
   </div>
