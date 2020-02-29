@@ -6,8 +6,8 @@ TracksUser.destroy_all
 puts "TracksUsers Destroyed"
 UsersEvent.destroy_all
 puts "Users_events Destroyed"
-Artist.destroy_all
-puts "Artists Destroyed"
+# Artist.destroy_all
+# puts "Artists Destroyed"
 Track.destroy_all
 puts "Tracks Destroyed"
 Event.destroy_all
@@ -16,9 +16,6 @@ User.destroy_all
 puts "Users Destroyed"
 
 puts "Start Updating databse"
-# location_choice = ["Impact Hub", "Lawson", "Maruetsu"]
-# address_choice = ["Tokyo, Meguro City, Meguro, 2−11−3", "3 Chome-9-1 Meguro, Meguro City, Tokyo", "2 Chome-21-23 Shimomeguro, Meguro City, Tokyo"]
-# artist_choice = ["Justin Bieber", "Drake", "Kaytranada"]
 
 users = [
   {
