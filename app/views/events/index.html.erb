@@ -7,12 +7,13 @@
   <div class="container">
     <% if @main_event.nil? == false %>
     <div class="row">
-      <div class="col-12 col-lg-3">
+      <div class="col-12 col-lg-6">
         <%= render "events/card", event: @main_event %>
       </div>
 
+
       <% @sub_events.each do |sub_event| %>
-          <div class="col-12 col-lg-3">
+          <div class="col-12 col-lg-6">
             <%= render "events/card", event: sub_event %>
           </div>
       <% end %>
