@@ -24,13 +24,7 @@
           <% unless locals[:likes].nil? %>
             <h2>Liked by <%= locals[:likes] %> users</h2>
           <% end %>
-          <% unless locals[:event].nil? %>
-            <% unless TracksUser.find_by(track: locals[:track], user: current_user, event: locals[:event]).nil? %>
-              <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-star", :remote => true, method: :delete  %>
-            <% else %>
-              <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-star non-color-star", :remote => true, method: :post  %>
-            <% end %>
-          <% end %>
+        <% end %>
         </div>
       </div>
     </div>
