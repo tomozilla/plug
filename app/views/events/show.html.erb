@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-  <h1> <%=@event.venue %></h1></div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)"></div>
+  <h1> <%=@event.venue %></h1>
     <div class="top-songs">
       <h1>Top 20 songs</h1>
       <% @tracks.each do |track| %>
-      <% number_of_likes = @track_counter[track.id][0] %>
-      <%= render "shared/track_card", locals: { track: track, event: @event, likes: number_of_likes } %>
+        <% number_of_likes = @track_counter[track.id][0] %>
+        <%= render "shared/track_card", locals: { track: track, event: @event, likes: number_of_likes } %>
       <% end %>
     </div>
   </div>
