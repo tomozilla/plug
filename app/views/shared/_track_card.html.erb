@@ -4,6 +4,12 @@
       <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
       <div class="card-product-infos">
         <h2><%= locals[:track].name %></h2>
+        <% locals[:track].artists.each do |artist| %>
+          <h2><%= artist.name  %></h2>
+        <% end %>
+        <% unless locals[:likes].nil? %>
+          <h2>Liked by <%= locals[:likes]  %> users</h2>
+        <% end %>
         <% unless locals[:event].nil? %>
           <% unless TracksUser.find_by(track: locals[:track], user: current_user, event: locals[:event]).nil? %>
             <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-star", method: :delete  %>

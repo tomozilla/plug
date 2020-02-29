@@ -43,8 +43,8 @@ class EventsController < ApplicationController
         end
       end
 
-      @tracks = @track_counter.sort_by { |track_id, count| count[0] }.take(5).map { |_, count| count.second }
-      @artists = @artist_counter.sort_by { |artist_id, count| count[0] }.take(5).map { |_, count| count.second }
+      @tracks = @track_counter.sort_by { |track_id, data| data.first }.take(20).map { |_, data| data.second }
+      @artists = @artist_counter.sort_by { |artist_id, count| count[0] }.take(20).map { |_, count| count.second }
     end
   end
 
