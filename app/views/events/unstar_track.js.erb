@@ -1,0 +1,9 @@
+function replaceCard(newHtml, track_id) {
+  console.log(track_id);
+  const oldCard = document.getElementById(track_id);
+  console.log(oldCard);
+  oldCard.insertAdjacentHTML('afterend', newHtml);
+  oldCard.remove();
+}
+
+replaceCard('<%= j render "shared/track_card", locals: { track: @track, event: @event, likes: @number_of_likes } %>', <%= @track.id %>);
