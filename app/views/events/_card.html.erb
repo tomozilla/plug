@@ -4,10 +4,11 @@
     <h2><%= event.venue %></h2>
     <h1><%= event.title %></h1>
     <p><%= event.artist %></p>
+    <p>100m away</p>
   </div>
   <% if event.photo.attached? %>
     <%= cl_image_tag event.photo.key, crop: :fill %>
   <% end %>
+  <%= link_to "Check In", event_path(event), class: "confirm-button" %>
 </div>
 
-<%= link_to "Confirm event", event_path(event), class: "btn btn-gradient" %>

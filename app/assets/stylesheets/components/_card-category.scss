@@ -3,6 +3,7 @@
   background-position: center;
   height: 250px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
@@ -13,6 +14,19 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-category h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: $white;
+
+}
+
+.card-category p {
+  font-size: 16px;
+  color: $white;
+  opacity: .7;
+
+}
 
 // @media (min-device-width:600px) {
 //     img[data-src-600px] {
