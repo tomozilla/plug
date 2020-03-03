@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   end
 
   get "library", to: "pages#library"
+  # get "home", to: "pages#scan_events"
+  get "scan_events", to: "events#index"
 
   resources :events, { only: [:index, :create, :show] } do
     member do
