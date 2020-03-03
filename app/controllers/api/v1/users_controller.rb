@@ -30,7 +30,7 @@ class Api::V1::UsersController < ApplicationController
         refresh_token: auth_params["refresh_token"]
       )
       sign_in @user
-      redirect_to events_path
+      redirect_to root_path
     end
 
   end
