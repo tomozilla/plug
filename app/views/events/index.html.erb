@@ -1,6 +1,6 @@
 
   <div class="cta">
-    <h2>See the events around you to check in.</h2>
+    <h2>See the events around you to check in</h2>
     <p>Connect with people at the event and share your music</p>
   </div>
 
@@ -19,13 +19,12 @@
       <% end %>
     </div>
     <% else %>
-    <div class="row justify-content-md-center">
-      <div class="col-6">
-        <div class="card-product">
-          <p>No event found</p>
-          <%= image_tag("artist.png") %>
-        </div>
+    <div class="col-12 col-lg-6">
+      <div class="card-product">
+        <p>No event found</p>
+        <%= image_tag("artist.png") %>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
