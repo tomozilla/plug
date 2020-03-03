@@ -17,6 +17,9 @@
       <li class="nav-item">
         <%= link_to "Events", events_path, class: "nav-link", id: "event-index" %>
       </li>
+      <li class="nav-item">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
       <% else %>
       <li class="nav-item">
         <%= link_to "Login", api_v1_login_path, class: "btn btn-ghost" %>
