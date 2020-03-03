@@ -2,15 +2,19 @@ require 'json'
 require 'open-uri'
 
 class EventsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index]
 
-  def index
-    RefreshTokenService.refresh_token(current_user)
-    FetchTracksService.downloadTracks(current_user)
+  def index 
     if params[:lat] && params[:lon]
       @events = Event.near([params[:lat], params[:lon]], 10)
       @main_event = @events.first
       @sub_events = @events[1..4]
+    end
+    if current_user.nil?
+      redirect_to api_v1_login_path
+    else 
+      RefreshTokenService.refresh_token(current_user)
+      FetchTracksService.downloadTracks(current_user)
     end
   end
 

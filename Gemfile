@@ -20,7 +20,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'rest-client'
 gem 'simple_token_authentication'
-gem 'newrelic_rpm'
 gem 'rspotify'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
