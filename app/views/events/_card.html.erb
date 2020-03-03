@@ -2,9 +2,9 @@
 <div class="card-product">
   <div class="card-product-infos">
     <h2><%= event.venue %></h2>
-    <h1><%= event.title %></h1>
+    <h1><%= event.address %></h1>
     <p><%= event.artist %></p>
-    <p>100m away</p>
+    <p><%= "#{(event.distance_to([params[:lat], params[:lon]])).round(1)}km" %></p>
   </div>
   <% if event.photo.attached? %>
     <%= cl_image_tag event.photo.key, crop: :fill %>

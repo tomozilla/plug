@@ -51,7 +51,7 @@ events = [
   {
     date: Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now),
     venue: "UNIT",
-    address: "Tokyo, Shibuya City, Ebisunishi, 1 Chome−34−17",
+    # address: "Tokyo, Shibuya City, Ebisunishi, 1 Chome−34−17",
     artist: "Bob Moses",
     latitude: 35.647334,
     longitude: 139.702256
@@ -59,7 +59,7 @@ events = [
     {
     date: Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now),
     venue: "LIQUIDROOM",
-    address: "Tokyo, Shibuya City, Higashi, 3 Chome-16-6",
+    # address: "Tokyo, Shibuya City, Higashi, 3 Chome-16-6",
     artist: "Carl Cox",
     latitude: 35.649383,
     longitude: 139.710553
@@ -67,7 +67,7 @@ events = [
   {
     date: Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now),
     venue: "The Room",
-    address: "Tokyo, Shibuya City, Sakuragaokacho, 15−19",
+    # address: "Tokyo, Shibuya City, Sakuragaokacho, 15−19",
     artist: "Emotional Oranges",
     latitude: 35.656655,
     longitude: 139.701640
@@ -75,7 +75,7 @@ events = [
   {
     date: Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now),
     venue: "SEL OCTAGON TOKYO",
-    address: "Tokyo, Minato City, Roppongi, 7 Chome−8−6",
+    # address: "Tokyo, Minato City, Roppongi, 7 Chome−8−6",
     artist: "FDVM",
     latitude: 35.665174,
     longitude: 139.729830
@@ -83,7 +83,7 @@ events = [
   {
     date: Faker::Date.between(from: 2.days.from_now, to: 5.days.from_now),
     venue: "Billboard Live Tokyo",
-    address: "Tokyo, Minato City, Akasaka, 9 Chome−7−4",
+    # address: "Tokyo, Minato City, Akasaka, 9 Chome−7−4",
     artist: "GoldLink",
     latitude: 35.666687,
     longitude: 139.730918
