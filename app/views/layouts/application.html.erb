@@ -25,7 +25,7 @@
   <script>
 
     window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = 'BQCJBcoveMBResSWHqLC3S60MEnEeOlL_mXqUiw4P8dEfcqDzrKzCVIL3tnqxWZHIpZ3m2vw3zZE1LXgTuUo_0ELeOhzqJpjlBtK7YXyJBGFbEIfDF6hAWraqv_Asbf56I90XSw6ujcK8wYpFltY-v7XftbbQKoS4A';
+      const token = 'BQD6niEi40e9re9au4l1J294hCxOoRqVnf8uSo3W5cnoTWlwM151eBJvj-LzSKJ2qFXkQsV5b4baRmfhsTZTfyOpRD4iNKL97HjNPN13U3tph2siQKYH5a66RMO5NVZHldyT2IpwXrqMP4eUBwdv_qKO_vtCiGHXQ7cIBB736ktDAKN8gprHtj246SfP4Ux_ENTaAzWRf-dmchpF31glp1zvze5U-6YJa7L1hfBNGBn0ZUM';
       const player = new Spotify.Player({
         name: 'Web Playback SDK Quick Start Player',
         getOAuthToken: cb => { cb(token); }
