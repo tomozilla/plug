@@ -1,0 +1,5 @@
+meta_product_name: "Plug"
+meta_title: "Plug - create your next playlist in a heartbeat!"
+meta_description: "Take a peek at other people's playlist while enjoying the concert. Your next curated music playlist was never so easy. Enjou it in Spotify!"
+meta_image: "plug_logo.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
