@@ -1,5 +1,9 @@
 function findMe() {
-  console.log("getting geolocation"){
+  console.log("getting geolocation")
+  // const urlParams = new URLSearchParams(window.location.search);
+  // const myLat = urlParams.get('lat');
+  // console.log("top");
+  // if (myLat === null) {
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         const currentLatitude = position.coords.latitude;
@@ -15,6 +19,7 @@ function findMe() {
     } else {
       alert('Your browser doesn\'t support geolocation.');
     }
+  // }
 }
 
 export { findMe };
