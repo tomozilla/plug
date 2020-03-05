@@ -149,13 +149,17 @@ transform: scale(1.1);
 
 .card-product .music {
   $bars: 10;
+  position: absolute;
+  width: 100px;
+  left: 105px;
+  bottom: 0px;
 
   .container {
-      // margin: 100px auto 0;
-      width: #{$bars * 25}px;
-      height: 10px;
+      width: #{$bars * 30}px;
+      height: 15px;
       display: flex;
-      align-items: stretch;
+      align-items: flex-end;
+      margin: 0;
   }
   .bar {
       width: 5px;
@@ -308,9 +312,7 @@ body {
   background: #242331;
 }
 
-.container p{
-  // padding-left: 4px;
-}
+
 
 // @media (min-device-width:600px) {
 //     img[data-src-600px] {
