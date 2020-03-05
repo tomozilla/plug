@@ -15,7 +15,8 @@ class Api::V1::AuthController < ApplicationController
       user-read-private
       user-top-read
       playlist-modify-private
-      playlist-modify-public",
+      playlist-modify-public
+      streaming",
      show_dialog: true
     }
     redirect_to "#{url}?#{query_params.to_query}"
