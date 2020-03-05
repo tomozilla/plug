@@ -33,10 +33,10 @@ users = [
     updated_at: "2020-02-20 11:28:40"
   },
   {
-    email: "tomo@plug.com",
+    email: "tomohiromitani@hotmail.com",
     password: "111111",
-    refresh_token: "AQA6r2BbAX3pQlmj_f6jnYjn6ovaIYkqVdJ46bSTHIeR22uVtPWjXKDL6kXNOZPLX33rJ8g4W3vIIsKNpc53DXYrezArzG_L80NOLgquTcsdspRsDtK3FCWcwXXJWr5b4XU",
-    spotify_id: "1149899312",
+    refresh_token: "AQC-MAtmhu3kV-Mon1B-TazH4yrh1ByFtagyycKhtBU4aIyE4NNIeHOtsBISvzPGpfWev-5mDxMpLiMmmieZW96wpQp4lbjHeXqAMbOESrD3z58aZL9QKTUSzs03ilbq1dk",
+    spotify_id: "tomozilla",
     updated_at: "2020-02-20 11:28:40"
   }
 ]
