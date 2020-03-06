@@ -4,6 +4,7 @@
       <% locals[:track].artists.each do |artist| %>
         <h1><%= artist.name  %></h1>
       <% end %>
+      <p><%= "Starred at #{locals[:track].events.first.artist}'s concert" %></p>
 
       <% unless locals[:likes].nil? %>
         <p><em>Liked by <%= locals[:likes]  %> user(s)</em></p>
@@ -13,7 +14,7 @@
     <% if locals[:track].artists.first.photo.attached? %>
     <%= cl_image_tag locals[:track].artists.first.photo.key, crop: :fill %>
     <% else %>
-    <%= image_tag "plug_logo.png" %>
+    <%= image_tag "sample.png" %>
     <% end %>
 
 </div>
