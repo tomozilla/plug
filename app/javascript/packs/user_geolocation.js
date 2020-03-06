@@ -5,6 +5,9 @@ function findMe() {
   // console.log("top");
   // if (myLat === null) {
     if(navigator.geolocation) {
+      //dummy one
+      navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
+      //working one
       navigator.geolocation.getCurrentPosition(function(position) {
         const currentLatitude = position.coords.latitude;
         const currentLongitude = position.coords.longitude;
@@ -13,11 +16,12 @@ function findMe() {
         startButtons.forEach((startButton)=>{
         startButton.attributes.href.value = `${startButton.attributes.href.value}?lat=${currentLatitude}&lon=${currentLongitude}`;
         });
-      }, function() {
-        alert('We couldn\'t find your position.');
+      }, function(error) {
+        clearTimeout(location_timeout);
+        geolocFail();
       });
     } else {
-      alert('Your browser doesn\'t support geolocation.');
+      geolocFail();
     }
   // }
 }

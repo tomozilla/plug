@@ -4,7 +4,7 @@
   <p>Star a song you'd like to add to your playlist</p>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
     <h1> <%=@event.venue %></h1>
-    <p>254 people checked in</p>
+    <p><%= "#{@event.users.count} people checked in" %></p>
   </div>
 </div>
 
@@ -74,7 +74,7 @@
 
     const playmeArray = document.querySelectorAll("#play-pause.fas");
 
-    playmeArray.forEach(playme => 
+    playmeArray.forEach(playme =>
       playme.addEventListener("click", (event) => {
         console.log(playme.classList[1]);
         if (playme.classList[1] == "fa-play") {
