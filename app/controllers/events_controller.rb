@@ -4,7 +4,7 @@ require 'open-uri'
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
-  def index 
+  def index
     if params[:lat] && params[:lon]
       @events = Event.near([params[:lat], params[:lon]], 10)
       @main_event = @events.first
@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     end
     if current_user.nil?
       redirect_to api_v1_login_path
-    else 
+    else
       RefreshTokenService.refresh_token(current_user)
       FetchTracksService.downloadTracks(current_user)
     end
@@ -30,6 +30,9 @@ class EventsController < ApplicationController
   end
 
   def show
+    admin_user = User.find_by(email: ENV['ADMIN_EMAIL'])
+    RefreshTokenService.refresh_token(admin_user)
+    @admin_token = admin_user.access_token
     @event = Event.includes(users: :tracks).find(params[:id])
     @users = @event.users.where.not(id: current_user.id)
     @track_counter = {}

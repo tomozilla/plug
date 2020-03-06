@@ -1,0 +1,21 @@
+<div class="card-product-event">
+  <div class="card-product-event-infos">
+    <h2><%= locals[:track].name %></h2>
+      <% locals[:track].artists.each do |artist| %>
+        <h1><%= artist.name  %></h1>
+      <% end %>
+      <p><%= "Starred at #{locals[:track].events.first.artist}'s concert" %></p>
+
+      <% unless locals[:likes].nil? %>
+        <p><em>Liked by <%= locals[:likes]  %> user(s)</em></p>
+      <% end %>
+  </div>
+
+    <% if locals[:track].artists.first.photo.attached? %>
+    <%= cl_image_tag locals[:track].artists.first.photo.key, crop: :fill %>
+    <% else %>
+    <%= image_tag "sample.png" %>
+    <% end %>
+
+</div>
+

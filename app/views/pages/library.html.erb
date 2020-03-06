@@ -8,7 +8,7 @@
     <div class="col-12 col-lg-6">
     <%= form_for :playlist, as: :get, url: export_path, method: :get, html: { class: "new_post", id: "new_post" } do |f| %>
       <div class="form-group">
-        <%= f.text_field :name, class: 'form-control', placeholder: "Type in a playlist name" %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Enter your playlist name" %>
         <%= f.submit class: 'btn btn-gradient' %>
       </div>
       <% end %>
@@ -40,7 +40,7 @@
   </div>
 
   <% @tracks.each do |track| %>
-    <%= render "shared/track_card", locals: { track: track } %>
+    <%= render "shared/library", locals: { track: track } %>
   <% end %>
 </div>
 

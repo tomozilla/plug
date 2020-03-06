@@ -4,7 +4,7 @@
   <p>Star a song you'd like to add to your playlist</p>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
     <h1> <%=@event.venue %></h1>
-    <p>254 people checked in</p>
+    <p><%= "#{@event.users.count} people checked in" %></p>
   </div>
 </div>
 
@@ -19,3 +19,82 @@
 <%= render "shared/track_card", locals: { track: track, event: @event, likes: number_of_likes } %>
 <% end %>
 
+
+<script src="https://sdk.scdn.co/spotify-player.js"></script>
+<script>
+  window.onSpotifyWebPlaybackSDKReady = () => {
+    const token = '<%= @admin_token %>' ;
+    const player = new Spotify.Player({
+      name: 'Web Playback SDK Quick Start Player',
+      getOAuthToken: cb => { cb(token); }
+    });
+
+    // Error handling
+    player.addListener('initialization_error', ({ message }) => { console.error(message); });
+    player.addListener('authentication_error', ({ message }) => { console.error(message); });
+    player.addListener('account_error', ({ message }) => { console.error(message); });
+    player.addListener('playback_error', ({ message }) => { console.error(message); });
+
+    // Playback status updates
+    player.addListener('player_state_changed', state => { console.log(state); });
+
+    // Ready
+    player.addListener('ready', ({ device_id }) => {
+      console.log('Ready with Device ID', device_id);
+    });
+
+    // Not Ready
+    player.addListener('not_ready', ({ device_id }) => {
+      console.log('Device ID has gone offline', device_id);
+    });
+
+    // Connect to the player!
+    player.connect();
+
+    const play = ({
+      spotify_uri,
+      playerInstance: {
+        _options: {
+          getOAuthToken,
+          id
+        }
+      }
+    }) => {
+      getOAuthToken(access_token => {
+        fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
+          method: 'PUT',
+          body: JSON.stringify({ uris: [spotify_uri] }),
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${access_token}`
+          },
+        });
+      });
+    };
+
+    const playmeArray = document.querySelectorAll("#play-pause.fas");
+
+    playmeArray.forEach(playme =>
+      playme.addEventListener("click", (event) => {
+        console.log(playme.classList[1]);
+        if (playme.classList[1] == "fa-play") {
+          spotify_id = event.currentTarget.dataset.sid;
+          spotify_uri_string = 'spotify:track:' + spotify_id
+          play({
+            playerInstance: player,
+            spotify_uri: spotify_uri_string,
+          });
+          event.currentTarget.classList.remove("fa-play");
+          event.currentTarget.classList.add("fa-pause");
+        }
+        else {
+          player.pause().then(() => {
+            console.log('Paused!');
+          });
+          event.currentTarget.classList.remove("fa-pause");
+          event.currentTarget.classList.add("fa-play");
+        }
+      })
+    );
+  };
+</script>
