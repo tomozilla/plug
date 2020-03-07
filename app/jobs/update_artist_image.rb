@@ -24,7 +24,7 @@ class UpdateArtistImage < ApplicationJob
         artist.photo.attach(io: file, filename: "#{artist.name}.#{extention}", content_type: file.meta["content-type"])
       rescue
         puts "Using a default photo"
-        sub_file = File.open(File.join(Rails.root,'app/assets/images/plug_logo.png'))
+        sub_file = File.open(File.join(Rails.root,'app/assets/images/sample_1.png'))
         artist.photo.attach(io: sub_file, filename: "#{artist.name}.png", content_type: "image/png")
       end
       puts "Artist image for #{artist.name} uploaded in Cloudinary..."

@@ -24,4 +24,7 @@ class PagesController < ApplicationController
   def scan_events
     redirect_to api_v1_login_path if current_user.nil?
   end
+    
+  def recommend_events
+  end
 end
