@@ -16,14 +16,15 @@ class FetchTracksService
           name: name,
           album: album)
           item["track"]["album"]["artists"].each do |artist|
-            spotify_id = artist["id"]
+            artist_spotify_id = artist["id"]
             name = artist["name"]
-            if Artist.find_by(spotify_id: spotify_id).nil?
+            if Artist.find_by(spotify_id: artist_spotify_id).nil?
               artist = Artist.create!(
                 name: name,
-                spotify_id: spotify_id)
-              ArtistsTrack.create!(artist: artist, track: track)
+                spotify_id: artist_spotify_id)
             end
+            artist = Artist.find_by(spotify_id: artist_spotify_id)
+            ArtistsTrack.create!(artist: artist, track: track)
           end
       else
         track = Track.find_by(spotify_id: spotify_id)
