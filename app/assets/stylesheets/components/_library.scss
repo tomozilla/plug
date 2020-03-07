@@ -3,9 +3,9 @@
     flex: 1 0 auto;
 }
 
-.row-equal .card {
-   width: 100%;
-}
+// .row-equal .card {
+//    width: 100%;
+// }
 
 /* ensure equal card height inside carousel */
 .carousel-inner>.row-equal.active,
@@ -26,4 +26,39 @@
 .card-img-top-250 {
     max-height: 200px;
     overflow:hidden;
+}
+
+.card-caroussel {
+  background: black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
+
+.card-caroussel h1 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px;
+  color: #E4C1F9;
+
+}
+
+.card-caroussel h2 {
+
+  font-size: 12px;
+  margin: 5px;
+  color: $black;
+  line-height: 1.4;
+  opacity: .8;
+  margin-bottom: 5px;
+  margin-top: 8px;
+}
+
+.card-caroussel p {
+  color: $black;
+  font-size: 10px;
+  line-height: 1.4;
+  opacity: .8;
+  margin-bottom: 5px;
+  margin-top: 8px;
+
 }

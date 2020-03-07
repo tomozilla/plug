@@ -8,7 +8,8 @@ class PagesController < ApplicationController
     else
       redirect_to "/"
     end
-    past_event_genre = current_user.events.last.genre
+    past_event_genre = current_user.events.find_by(artist: "Bob Moses").genre
+    #hard coded - should be reviewed
     start_date = 1.days.from_now
     end_date = 7.days.from_now
     @recommended_events = Event.where(genre: past_event_genre, date: start_date.beginning_of_day..end_date.end_of_day)
@@ -28,7 +29,7 @@ class PagesController < ApplicationController
   def scan_events
     redirect_to api_v1_login_path if current_user.nil?
   end
-    
+
   def recommend_events
   end
 
