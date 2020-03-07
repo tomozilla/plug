@@ -1,9 +1,7 @@
 <div class="card-product-event">
   <div class="card-product-event-infos">
-    <h2><%= locals[:track].name %></h2>
-      <% locals[:track].artists.each do |artist| %>
-        <h1><%= artist.name  %></h1>
-      <% end %>
+    <h2 class="max-lines"><%= locals[:track].name %></h2>
+      <h1 class="max-lines"><%= locals[:track].artists.map {|artist| artist.name }.join(", ") %></h1>
       <em><p><%= "Starred at #{locals[:track].events.first.artist}'s concert" %></p></em>
 
       <% unless locals[:likes].nil? %>

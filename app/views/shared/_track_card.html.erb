@@ -41,9 +41,9 @@
 
 
         <h1 class="max-lines" ><%= locals[:track].name %></h1>
-        <% locals[:track].artists.each do |artist| %>
-          <h2 class="max-lines"><%= artist.name  %></h2>
-        <% end %>
+
+        <h2 class="max-lines"><%= locals[:track].artists.map {|artist| artist.name }.join(", ") %></h2>
+
         <h3 class="max-lines"><%= locals[:track].album %></h3>
         <% unless locals[:likes].nil? %>
           <p><em>Liked by <%= locals[:likes]  %> user(s)</em></p>

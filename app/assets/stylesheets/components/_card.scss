@@ -108,16 +108,15 @@ transform: scale(1.1);
 }
 
 .card-product .card-product-infos h2 {
-  width: 150px;
+  width: 120px;
   font-size: 14px;
-  font-weight: bold;
   margin: 0;
   color: $white;
   line-height: 1.4;
   opacity: .8;
   margin-bottom: 5px;
   margin-top: 8px;
-  // display: inline-block;
+  display: inline-block;
 }
 
 .card-product .card-product-infos h3 {
@@ -237,6 +236,7 @@ transform: scale(1.1);
   font-weight: bold;
   margin: 0;
   color: #E4C1F9;
+  width: 190px;
 }
 
 
