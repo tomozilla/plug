@@ -2,4 +2,5 @@ meta_product_name: "Plug"
 meta_title: "Plug - Spotify Plugin"
 meta_description: "The location based music curation app. We let you check-in music events, and discover new music for you!"
 meta_image: "plug_logo.png" # should exist in `app/assets/images/`
+meta_fb_image: "plug_logo_fb.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
