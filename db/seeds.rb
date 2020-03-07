@@ -99,7 +99,7 @@ events = [
     latitude: 35.666687,
     longitude: 139.730918,
     genre: "House"
-  }
+  },
     {
     date: Faker::Date.between(from: 1.days.from_now, to: 7.days.from_now),
     venue: "ageHa",

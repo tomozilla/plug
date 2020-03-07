@@ -2,11 +2,14 @@
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
     <div class="card-product">
-
-      <% if locals[:track].artists.first.photo.attached? %>
-      <%= cl_image_tag locals[:track].artists.first.photo.key, crop: :fill %>
+      <% unless locals[:track].artists.empty? %>      
+        <% if locals[:track].artists.first.photo.attached? %>
+          <%= cl_image_tag locals[:track].artists.first.photo.key, crop: :fill %>
+        <% else %>
+          <%= image_tag "sample_1.png" %>
+        <% end %>
       <% else %>
-      <%= image_tag "sample_1.png" %>
+        <%= image_tag "sample_1.png" %>
       <% end %>
 
     <div class="card-product-infos">
