@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 2020_02_22_015740) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.string "artist"
-    t.string "authentication_token", limit: 30
     t.string "address"
+    t.string "authentication_token", limit: 30
     t.index ["authentication_token"], name: "index_events_on_authentication_token", unique: true
   end
 
