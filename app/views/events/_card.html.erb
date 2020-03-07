@@ -9,6 +9,6 @@
   <% if event.photo.attached? %>
     <%= cl_image_tag event.photo.key, crop: :fill %>
   <% end %>
-  <%= link_to "Check In", event_path(event), class: "confirm-button" %>
+  <%= link_to "Check In", check_in_event_path(event), class: "confirm-button", method: "post" %>
 </div>
 

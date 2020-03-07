@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     else
       redirect_to "/"
     end
+    past_event_genre = current_user.events.last.genre
+    start_date = 1.days.from_now
+    end_date = 7.days.from_now
+    @recommended_events = Event.where(genre: past_event_genre, date: start_date.beginning_of_day..end_date.end_of_day)
   end
 
   def export_spotify
@@ -27,4 +31,5 @@ class PagesController < ApplicationController
     
   def recommend_events
   end
+
 end
