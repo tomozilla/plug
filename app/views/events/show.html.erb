@@ -26,7 +26,8 @@
     const token = '<%= @admin_token %>' ;
     const player = new Spotify.Player({
       name: 'Web Playback SDK Quick Start Player',
-      getOAuthToken: cb => { cb(token); }
+      getOAuthToken: cb => { cb(token); },
+      volume: 0.5
     });
 
     // Error handling
