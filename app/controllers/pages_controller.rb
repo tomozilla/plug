@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
- skip_before_action :authenticate_user!, only: [:home, :dashboard]
+ skip_before_action :authenticate_user!, only: [:home, :scan_events]
 
   def library
     if user_signed_in?
@@ -21,7 +21,10 @@ class PagesController < ApplicationController
     @tracks = current_user.tracks unless current_user.nil?
   end
 
+  def scan_events
+    redirect_to api_v1_login_path if current_user.nil?
+  end
+    
   def recommend_events
-
   end
 end
