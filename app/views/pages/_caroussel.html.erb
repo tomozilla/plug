@@ -1,0 +1,17 @@
+<div class="card-img-top card-img-top-250">
+
+
+    <% if event.photo.attached? %>
+    <%= cl_image_tag event.photo.key, crop: :fill, class:"img-fluid" %>
+    <% end %>
+</div>
+
+
+ <div class="container card-caroussel" class="small text-wide">
+    <h1><%= event.genre %></h1>
+    <h2><%= event.venue %></h2>
+    <p><%= event.address %></p>
+    <p><%= event.artist %></p>
+    <p><%= "#{(event.distance_to([params[:lat], params[:lon]])).round(1)}km" %></p>
+  </div>
+
