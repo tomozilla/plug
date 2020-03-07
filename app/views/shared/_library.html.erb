@@ -10,12 +10,14 @@
         <p><em>Liked by <%= locals[:likes]  %> user(s)</em></p>
       <% end %>
   </div>
-
-    <% if locals[:track].artists.first.photo.attached? %>
-    <%= cl_image_tag locals[:track].artists.first.photo.key, crop: :fill %>
-    <% else %>
-    <%= image_tag "sample.png" %>
-    <% end %>
-
+      <% unless locals[:track].artists.empty? %>      
+        <% if locals[:track].artists.first.photo.attached? %>
+          <%= cl_image_tag locals[:track].artists.first.photo.key, crop: :fill %>
+        <% else %>
+          <%= image_tag "sample.png" %>
+        <% end %>
+      <% else %>
+          <%= image_tag "sample.png" %>
+      <% end %>
 </div>
 
