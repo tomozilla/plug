@@ -11,7 +11,12 @@
 
 }
 
-
+.max-lines {
+  display: block;/* or inline-block */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
 .card-product img {
   height: 100px;
@@ -47,6 +52,7 @@ transform: scale(1.1);
   position: absolute;
   bottom: 1px;
   right: 5px;
+  // right: 5px;
 }
 
 .card-product .confirm-button {
@@ -93,15 +99,16 @@ transform: scale(1.1);
 
 }
 
-.card-product .card-product-infos h2 {
+.card-product .card-product-infos h1 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
   color: #E4C1F9;
-
+  width: 200px;
 }
 
-.card-product .card-product-infos h1 {
+.card-product .card-product-infos h2 {
+  width: 150px;
   font-size: 14px;
   font-weight: bold;
   margin: 0;
@@ -110,7 +117,16 @@ transform: scale(1.1);
   opacity: .8;
   margin-bottom: 5px;
   margin-top: 8px;
-  display: inline-block;
+  // display: inline-block;
+}
+
+.card-product .card-product-infos h3 {
+  font-size: 14px;
+  margin: 0;
+  width: 150px;
+  color: $white;
+  width: 120px;
+  opacity: .8px;
 }
 
 .card-product .card-product-infos .star-card {

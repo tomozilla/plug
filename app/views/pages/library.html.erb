@@ -16,7 +16,13 @@
   </div>
 </div>
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div class="container">
+ <% @tracks.each do |track| %>
+    <%= render "shared/library", locals: { track: track } %>
+  <% end %>
+</div>
+
+  <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block w-100" src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80" alt="First slide">
@@ -38,10 +44,7 @@
       </div>
     </div>
   </div>
+ -->
 
-  <% @tracks.each do |track| %>
-    <%= render "shared/library", locals: { track: track } %>
-  <% end %>
-</div>
 
 

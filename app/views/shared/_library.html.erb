@@ -4,7 +4,7 @@
       <% locals[:track].artists.each do |artist| %>
         <h1><%= artist.name  %></h1>
       <% end %>
-      <p><%= "Starred at #{locals[:track].events.first.artist}'s concert" %></p>
+      <em><p><%= "Starred at #{locals[:track].events.first.artist}'s concert" %></p></em>
 
       <% unless locals[:likes].nil? %>
         <p><em>Liked by <%= locals[:likes]  %> user(s)</em></p>
