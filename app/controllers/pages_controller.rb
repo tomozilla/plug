@@ -20,4 +20,8 @@ class PagesController < ApplicationController
   def home
     @tracks = current_user.tracks unless current_user.nil?
   end
+
+  def recommend_events
+
+  end
 end
