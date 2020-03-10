@@ -2,22 +2,32 @@
   <div class="cta">
     <h2>See the events around you to check in</h2>
     <p>Connect with people at the event and share your music</p>
+    <h1>Today's event</h1>
   </div>
 
   <div class="container">
     <% if @main_event.nil? == false %>
-    <div class="row">
-      <div class="col-12 col-lg-6">
-        <%= render "events/card", event: @main_event %>
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <%= render "events/card", event: @main_event, sub_event: false %>
+        </div>
+      </div>
+  </div>
+
+  <div class="cta">
+    <h1>Other events near-by</h1>
+  </div>
+
+    <div class="container">
+      <div class="row">
+      <% @sub_events.each do |event| %>
+          <div class="col-12 col-lg-6">
+              <%= render "events/card", event: event, sub_event: true %>
+          </div>
+      <% end %>
       </div>
 
 
-      <% @sub_events.each do |sub_event| %>
-          <div class="col-12 col-lg-6">
-            <%= render "events/card", event: sub_event %>
-          </div>
-      <% end %>
-    </div>
     <% else %>
     <div class="col-12 col-lg-6">
       <div class="card-product-event">
@@ -26,5 +36,6 @@
       </div>
     </div>
     <% end %>
+  </div>
   </div>
 </div>

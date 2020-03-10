@@ -1,5 +1,6 @@
 
 <div class="card-product-event">
+
   <div class="card-product-event-infos">
     <h2><%= event.venue %></h2>
     <p><%= event.address %></p>
@@ -9,6 +10,6 @@
   <% if event.photo.attached? %>
     <%= cl_image_tag event.photo.key, crop: :fill %>
   <% end %>
-  <%= link_to "Check In", check_in_event_path(event), class: "confirm-button", method: "post" %>
+  <%= link_to "Check In", check_in_event_path(event), class: (%w(confirm-button) << (sub_event ? "confirm-button--disabled" : [])), method: "post" %>
 </div>
 
