@@ -10,7 +10,6 @@
 }
 
 
-
 .home-video-wrapper {
 height: 100vh;
 display: flex;
@@ -18,9 +17,11 @@ padding: 350px 0;
 }
 
 
+
+
 .home h1 {
   margin: 0;
-  margin-bottom: 10px;
+  padding-left: 15px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 50px;
@@ -31,9 +32,10 @@ padding: 350px 0;
 
 
 .home p {
-  margin-left: 0;
+  padding-left: 15px;
   margin-bottom: 8px;
-  font-size: 18px;
+  width: 220px;
+  font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);

@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
     <div class="card-product">
-      <% unless locals[:track].artists.empty? %>      
+      <% unless locals[:track].artists.empty? %>
         <% if locals[:track].artists.first.photo.attached? %>
           <%= cl_image_tag locals[:track].artists.first.photo.key, crop: :fill %>
         <% else %>
@@ -20,9 +20,9 @@
       <div class="star-card">
        <% unless locals[:event].nil? %>
         <% unless TracksUser.find_by(track: locals[:track], user: current_user, event: locals[:event]).nil? %>
-          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-star", :remote => true, method: :delete  %>
+          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-plus", :remote => true, method: :delete  %>
         <% else %>
-          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-star non-color-star", :remote => true, method: :post  %>
+          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-check-square", :remote => true, method: :post  %>
         <% end %>
       <% end %>
       </div>

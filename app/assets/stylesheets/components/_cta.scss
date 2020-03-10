@@ -3,7 +3,8 @@
   margin-left: 25px;
   margin-right: 20px;
   margin-bottom: 20px;
-  color: $gray;
+  color: $white;
+  opacity: 0.6;
 
 }
 
@@ -12,7 +13,7 @@
 .cta h2 {
   font-size: 24px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
@@ -21,11 +22,14 @@
 }
 
 .cta h1 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
   color: $white;
+  opacity: 0.9;
 
 }
+
+

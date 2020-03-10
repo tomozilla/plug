@@ -1,3 +1,25 @@
+<div class="cta">
+   <h2>Export your customized playlist to Spotify</h2>
+   <!-- s -->
+</div>
+<div class="container">
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-6">
+  <%= form_for :playlist, as: :get, url: export_path, method: :get, html: { class: "new_post", id: "new_post" } do |f| %>
+    <div class="form-group">
+      <%= f.text_field :name, class: 'form-control', placeholder: "Enter your playlist name" %>
+      <%= f.submit class: 'btn btn-gradient' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<div class="container">
+<% @tracks.each do |track| %>
+  <%= render "shared/library", locals: { track: track } %>
+<% end %>
+</div>
 
 <div class="cta">
    <h2>Recommended events nearby in coming week</h2>
@@ -36,28 +58,6 @@
 
 
 
-<div class="cta">
-   <h2>Export your customized playlist to Spotify</h2>
-   <!-- s -->
-</div>
-<div class="container">
-<div class="row justify-content-center">
-  <div class="col-12 col-lg-6">
-  <%= form_for :playlist, as: :get, url: export_path, method: :get, html: { class: "new_post", id: "new_post" } do |f| %>
-    <div class="form-group">
-      <%= f.text_field :name, class: 'form-control', placeholder: "Enter your playlist name" %>
-      <%= f.submit class: 'btn btn-gradient' %>
-    </div>
-    <% end %>
-  </div>
-</div>
-</div>
-
-<div class="container">
-<% @tracks.each do |track| %>
-  <%= render "shared/library", locals: { track: track } %>
-<% end %>
-</div>
 
 
 
