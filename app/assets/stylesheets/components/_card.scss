@@ -51,7 +51,7 @@ transform: scale(1.1);
   // margin-top: 8px;
   position: absolute;
   bottom: 1px;
-  right: 5px;
+  right: 20px;
   // right: 5px;
 }
 
@@ -89,7 +89,7 @@ transform: scale(1.1);
 
 .card-product .card-product-infos p {
   color: $white;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.4;
   opacity: .8;
   margin-bottom: 5px;
@@ -104,7 +104,7 @@ transform: scale(1.1);
   font-weight: bold;
   margin: 0;
   color: #E4C1F9;
-  width: 200px;
+  width: 160px;
 }
 
 .card-product .card-product-infos h2 {
@@ -137,10 +137,25 @@ transform: scale(1.1);
   display: flex;
   position: absolute;
   width: 40px;
-  right: 20px;
-  top: 60px;
+  right: 15px;
+  top: 20px;
 
 
+}
+
+
+
+.card-product .card-product-infos .star-card a {
+  color: $white;
+  text-decoration: none;
+  background-color: transparent;
+  opacity: 0.7;
+
+}
+
+.card-product .card-product-infos .star-card a:hover {
+  color: #E4C1F9;
+  text-decoration: none;
 }
 
 .card-product  .play-button {
