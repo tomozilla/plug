@@ -20,9 +20,9 @@
       <div class="star-card">
        <% unless locals[:event].nil? %>
         <% unless TracksUser.find_by(track: locals[:track], user: current_user, event: locals[:event]).nil? %>
-          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-plus", :remote => true, method: :delete  %>
+          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-minus-square", :remote => true, method: :delete  %>
         <% else %>
-          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-check-square", :remote => true, method: :post  %>
+          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-plus-square", :remote => true, method: :post  %>
         <% end %>
       <% end %>
       </div>
