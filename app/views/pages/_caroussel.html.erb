@@ -9,9 +9,10 @@
 
  <div class="card-caroussel" class="small text-wide">
     <h1><%= event.genre %></h1>
+    <h2><%= event.artist %></h2>
     <h3><%= event.venue %></h3>
     <h4><%= event.address %></h4>
-    <h2><%= event.artist %></h2>
+    <h5><%= event.date %></h5>
     <em><p><%= "#{(event.distance_to([params[:lat], params[:lon]])).round(1)}km" %></p></em>
   </div>
 

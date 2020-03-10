@@ -1,40 +1,47 @@
   <div class="cta">
-    <h2>Connect with people at the event and share your music</h2>
-    <p><%="You are at #{@main_event.artist} concert"%></p>
-    <h1>Today's event</h1>
+
+    <h2>Share your music with people at the same event</h2>
+    <% if @main_event.nil? %>
+    <h1 align="center"><%="We cannot find your location"%></h1>
+    <% else %>
+    <h1 align="center"><%="You are at #{@main_event.artist} concert"%></h1>
+    <% end %>
   </div>
 
   <div class="container">
-    <% if @main_event.nil? == false %>
-      <div class="row">
-        <div class="col-12 col-lg-6">
-          <%= render "events/card", event: @main_event, sub_event: false %>
-        </div>
+    <% if @main_event.nil? %>
+
+    <div class="col-12 col-lg-6">
+      <div class="card-product-event">
+        <p>No event found</p>
+        <%= image_tag("artist.png") %>
       </div>
+    </div>
+
+    <% else %>
+
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <%= render "events/card", event: @main_event, sub_event: false %>
+      </div>
+    </div>
   </div>
 
-  <div class="cta">
-    <h1>Other events close to you</h1>
+  <div class="cta" align="center">
+    <h1>Today's other events close to you</h1>
   </div>
-    <div class="container">
-      <div class="row">
+  <div class="container">
+    <div class="row">
       <% @sub_events.each do |event| %>
-          <div class="col-12 col-lg-6">
-              <%= render "events/card", event: event, sub_event: true %>
-          </div>
-      <% end %>
+      <div class="col-12 col-lg-6">
+        <%= render "events/card", event: event, sub_event: true %>
       </div>
+      <% end %>
+    </div>
 
-<% else %>
-<div class="col-12 col-lg-6">
-  <div class="card-product-event">
-    <p>No event found</p>
-    <%= image_tag("artist.png") %>
+    <% end %>
   </div>
 </div>
-<% end %>
-        </div>
-  </div>
 </div>
 
 

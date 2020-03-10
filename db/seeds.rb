@@ -110,7 +110,7 @@ events = [
     genre: "Dance/Electronic"
   },
     {
-    date: Faker::Date.between(from: 1.days.from_now, to: 7.days.from_now),
+    date: Faker::Date.between(from: 14.days.ago, to: 6.days.ago),
     venue: "LIQUIDROOM",
     # address: "Tokyo, Shibuya City, Higashi, 3 Chome-16-6",
     artist: "FKJ",
@@ -137,7 +137,7 @@ events = [
     genre: "Dance/Electronic"
   },
   {
-    date: Faker::Date.between(from: 1.days.from_now, to: 7.days.from_now),
+    date: Faker::Date.between(from: 14.days.ago, to: 6.days.ago),
     venue: "Billboard Live Tokyo",
     # address: "Tokyo, Minato City, Akasaka, 9 Chome−7−4",
     artist: "Purple Disco Machine",
