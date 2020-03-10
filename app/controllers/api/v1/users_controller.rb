@@ -22,12 +22,14 @@ class Api::V1::UsersController < ApplicationController
 
       user_response = RestClient.get('https://api.spotify.com/v1/me', header)
       user_params = JSON.parse(user_response.body)
+      
       p user_params
       @user = User.find_for_spotify(
         spotify_id: user_params["id"],
         email: user_params["email"],
         access_token: auth_params["access_token"],
-        refresh_token: auth_params["refresh_token"]
+        refresh_token: auth_params["refresh_token"],
+        image_url: user_params["images"][0]["url"]
       )
       sign_in @user
       redirect_to root_path

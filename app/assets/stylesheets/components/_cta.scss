@@ -1,4 +1,4 @@
-p {
+.cta p {
   font-size: 16px;
   margin-top: 8px;
   margin-left: 20px;
@@ -10,7 +10,7 @@ p {
 
 
 
-h2 {
+.cta h2 {
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
@@ -21,10 +21,10 @@ h2 {
 
 }
 
-h1 {
-  font-size: 36px;
+.cta h1 {
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
   color: $white;

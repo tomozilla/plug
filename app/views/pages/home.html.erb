@@ -1,9 +1,12 @@
 <div class="home-video-wrapper">
   <%= video_tag "concert.mp4", autoplay: "", loop: "", muted: "", playsinline: '', class: 'home_video' %>
   <div class="container">
+    <div class="home">
     <h1><strong>PLUG</strong></h1>
+
 <!--     <p>Take a peek at others' music while enjoying a concert</p> -->
     <p>Your next Spotify playlist in a heartbeat!</p>
+
     <%= link_to "See events", scan_events_path, class: "btn btn-gradient", id: "event-index" %>
   </div>
 </div>

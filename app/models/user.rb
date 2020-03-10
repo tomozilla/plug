@@ -12,13 +12,13 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :spotify_id, presence: true
 
-  def self.find_for_spotify(spotify_id:, email:, access_token:, refresh_token:)
+  def self.find_for_spotify(spotify_id:, email:, access_token:, refresh_token:, image_url:)
     user = User.find_by(spotify_id: spotify_id)
     unless user.nil?
-      user.update(access_token: access_token, refresh_token: refresh_token)
+      user.update(access_token: access_token, refresh_token: refresh_token, image_url: image_url)
       puts "User token updated"
     else
-      user = User.new(email: email, spotify_id: spotify_id)
+      user = User.new(email: email, spotify_id: spotify_id, image_url: image_url)
       user.password = Devise.friendly_token[0,20]
       user.access_token = access_token
       user.refresh_token = refresh_token
