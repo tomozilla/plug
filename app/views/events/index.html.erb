@@ -1,7 +1,6 @@
-
   <div class="cta">
-    <h2>See the events around you to check in</h2>
-    <p>Connect with people at the event and share your music</p>
+    <h2>Connect with people at the event and share your music</h2>
+    <p><%="You are at #{@main_event.artist} concert"%></p>
     <h1>Today's event</h1>
   </div>
 
@@ -15,9 +14,8 @@
   </div>
 
   <div class="cta">
-    <h1>Other events near-by</h1>
+    <h1>Other events close to you</h1>
   </div>
-
     <div class="container">
       <div class="row">
       <% @sub_events.each do |event| %>
@@ -27,15 +25,16 @@
       <% end %>
       </div>
 
-
-    <% else %>
-    <div class="col-12 col-lg-6">
-      <div class="card-product-event">
-        <p>No event found</p>
-        <%= image_tag("artist.png") %>
-      </div>
-    </div>
-    <% end %>
-  </div>
+<% else %>
+<div class="col-12 col-lg-6">
+  <div class="card-product-event">
+    <p>No event found</p>
+    <%= image_tag("artist.png") %>
   </div>
 </div>
+<% end %>
+        </div>
+  </div>
+</div>
+
+
