@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
       <div class="container  carousel-inner">
         <% @recommended_events.each_with_index do |event, index| %>
-          <div class="row row-equal carousel-item m-t-0 <%= index == 0 ? 'active' : '' %>">
+          <div class="row row-equal carousel-item <%= index == 0 ? 'active' : '' %>">
               <div class="col-md-4">
                   <div class="card">
                       <%= render "pages/caroussel", event: event %>
