@@ -5,7 +5,7 @@
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span><%= image_tag "user_1.png", class: "avatar dropdown-toggle", 'aria-haspopup': true, 'aria-expanded': false %></span>
+    <span><%= image_tag current_user.image_url, class: "avatar dropdown-toggle", 'aria-haspopup': true, 'aria-expanded': false %></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
