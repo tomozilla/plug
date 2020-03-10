@@ -23,3 +23,16 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  opacity: 0.8;
+}
+
+
+a:hover {
+  color: #E4C1F9;
+  text-decoration: none;
+
+}

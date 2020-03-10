@@ -1,11 +1,12 @@
 
-<div class="cta">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-    <h1> <%=@event.venue %></h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+  <h1> <%=@event.venue %></h1>
+  <div class="cta">
     <p align="center"><%= "#{@event.users.count} people at #{@event.artist} concert at #{@event.venue} like tracks below in Spotify"%></p>
   </div>
-  <!-- <h2 align="center">Add a new track to your library</h2> -->
+
 </div>
+
 
 <div class="container">
  <div class="row justify-content-center">
