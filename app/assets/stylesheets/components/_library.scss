@@ -24,41 +24,79 @@
 
 /* control image height */
 .card-img-top-250 {
-    max-height: 200px;
+    max-height: 160px;
     overflow:hidden;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.container.carousel-inner {
+  // width: 500px;
+
+}
+
+ .card {
+  margin-bottom: 50px;
 }
 
 .card-caroussel {
   background: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 140px;
 
 }
 
 .card-caroussel h1 {
-  font-size: 14px;
-  font-weight: bold;
-  margin: 5px;
-  color: #E4C1F9;
+  font-size: 16px;
+  margin: 10px;
+  color: $white;
 
 }
 
 .card-caroussel h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: #E4C1F9;
+}
 
-  font-size: 12px;
+.card-caroussel h3 {
+
+  font-size: 14px;
   margin: 5px;
-  color: $black;
+  color: $white;
   line-height: 1.4;
   opacity: .8;
-  margin-bottom: 5px;
-  margin-top: 8px;
+  position: absolute;
+  top: 170px;
+  right: 10px;
+}
+
+.card-caroussel h4 {
+  font-size: 12px;
+  margin: 5px;
+  color: $white;
+  line-height: 1.4;
+  opacity: .8;
+  position: absolute;
+  top: 200px;
+  right: 10px;
+
 }
 
 .card-caroussel p {
-  color: $black;
-  font-size: 10px;
+  color: $white;
+  font-size: 12px;
   line-height: 1.4;
   opacity: .8;
-  margin-bottom: 5px;
-  margin-top: 8px;
+  margin-top: 20px;
+  margin-left: 10px;
 
 }
