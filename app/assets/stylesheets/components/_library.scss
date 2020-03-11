@@ -21,6 +21,9 @@
     display: flex;
 }
 
+.carousel-inner img {
+  margin: auto;
+}
 
 /* control image height */
 .card-img-top-250 {
@@ -86,17 +89,33 @@
   line-height: 1.4;
   opacity: .8;
   position: absolute;
-  top: 200px;
+  top: 190px;
   right: 10px;
 
 }
 
 .card-caroussel p {
   color: $white;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .8;
   margin-top: 20px;
   margin-left: 10px;
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  font-weight: bold;
 
 }
+
+
+.card-caroussel h5 {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  opacity: .8;
+
+}
+
