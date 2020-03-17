@@ -19,24 +19,24 @@ puts "Start Updating databse"
 
 users = [
   {
-    email: "grace@plug.com",
+    email: ENV['USER1_EMAIL'],
     password: "111111",
-    refresh_token: "AQCmWGtUugm21ldmIHvJr9-MJA6-r48oUGE5I7LvUzKveBYGIS171EDlJqzm7g0hA0S-f7s5yeIYhmfBXYchhZv3hjgwpqO0MTdk5WIt1evmznXnTdD0nzOak1YHYLaT_aM",
-    spotify_id: "1149899312",
+    refresh_token: ENV['USER1_REFRESH_TOKEN'],
+    spotify_id: ENV['USER1_SPOTIFY_ID'],
     updated_at: "2020-02-20 11:28:40"
   },
   {
-    email: "paula@plug.com",
+    email: ENV['USER2_EMAIL'],
     password: "111111",
-    refresh_token: "AQCwcLA5HAJ9YbgA6BShEAiDgVr6Heo0zGH2QAuk01DH5ZkMwsjmvUbzGU85tUI3FxDjJw5s70KaSl5x3qoKglItb0nO6TdU3F3qyRxGUAswrGT8-3EhaXefgfnaI1SLRGg",
-    spotify_id: "1149899312",
+    refresh_token: ENV['USER2_REFRESH_TOKEN'],
+    spotify_id: ENV['USER2_SPOTIFY_ID'],
     updated_at: "2020-02-20 11:28:40"
   },
   {
-    email: "tomohiromitani@hotmail.com",
+    email: ENV['USER3_EMAIL'],
     password: "111111",
-    refresh_token: "AQC-MAtmhu3kV-Mon1B-TazH4yrh1ByFtagyycKhtBU4aIyE4NNIeHOtsBISvzPGpfWev-5mDxMpLiMmmieZW96wpQp4lbjHeXqAMbOESrD3z58aZL9QKTUSzs03ilbq1dk",
-    spotify_id: "tomozilla",
+    refresh_token: ENV['USER3_REFRESH_TOKEN'],
+    spotify_id: ENV['USER3_SPOTIFY_ID'],
     updated_at: "2020-02-20 11:28:40"
   }
 ]
