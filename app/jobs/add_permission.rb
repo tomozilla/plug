@@ -5,6 +5,6 @@ class AddPermission < ApplicationJob
     puts "running"
     heroku = PlatformAPI.connect_oauth(ENV['API_TOKEN'])
     puts heroku.app.info(ENV['HEROKU_APP_NAME'])
-    puts "end"
+    puts "end!"
   end
 end
