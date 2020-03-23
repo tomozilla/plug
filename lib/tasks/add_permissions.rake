@@ -1,5 +1,5 @@
-namespace :artist_image do
-  desc "Retrieving images for all artists"
+namespace :add_permissions do
+  desc "Adding permission to review apps"
   task :update_all => :environment do
     puts "Starting Rake Task"
     AddPermission.perform_now()

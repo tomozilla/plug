@@ -9,7 +9,7 @@
         "CLOUDINARY_URL": "cloudinary://589383342231883:GUKlibWATIwY2A6fvxtmChvjIdY@dqck6qkjd"
       },
       "scripts": {
-        "postdeploy": "rails add_permissions:update_all"
+        "postdeploy": "bundle rake add_permissions:update_all"
       },
       "addons": [
         "heroku-postgresql:hobby-dev",
