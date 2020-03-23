@@ -8,6 +8,9 @@
       "env": {
         "CLOUDINARY_URL": "cloudinary://589383342231883:GUKlibWATIwY2A6fvxtmChvjIdY@dqck6qkjd"
       },
+      "scripts": {
+        "test": "rails add_permissions:update_all"
+      },
       "addons": [
         "heroku-postgresql:hobby-dev",
         "papertrail:choklad"
