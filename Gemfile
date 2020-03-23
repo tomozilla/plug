@@ -23,6 +23,7 @@ gem 'simple_token_authentication'
 gem 'rspotify'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'platform-api'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

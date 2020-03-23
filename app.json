@@ -5,6 +5,9 @@
   "addons": ["heroku-postgresql:standard-0"],
   "environments": {
     "review": {
+      "scripts": {
+        "postdeploy": "bundle exec rake add_permissions:update_all"
+      },
       "env": {
         "CLOUDINARY_URL": "cloudinary://589383342231883:GUKlibWATIwY2A6fvxtmChvjIdY@dqck6qkjd"
       },
