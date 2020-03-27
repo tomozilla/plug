@@ -375,20 +375,10 @@ transform: scale(1.1);
   margin-top: 3px;
 }
 
+.card-text {
+  margin: -4px 0px;;
+}
 
 body {
   background: #242331;
 }
-
-
-
-// @media (min-device-width:600px) {
-//     img[data-src-600px] {
-//         content: attr(data-src-600px, url);
-//     }
-// }
-// @media (min-device-width:800px) {
-//     img[data-src-800px] {
-//         content: attr(data-src-800px, url);
-//     }
-// }

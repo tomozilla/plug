@@ -1,55 +1,26 @@
 <div class="cta">
-   <h2>Export tracks to Spotify as playlist</h2>
-   <!-- s -->
+   <h2>Create your new playlist on Spotify!</h2>
 </div>
+
 <div class="container">
-<div class="row justify-content-center">
-  <div class="col-12 col-lg-6">
-  <%= form_for :playlist, as: :get, url: export_path, method: :get, html: { class: "new_post", id: "new_post" } do |f| %>
-    <div class="form-group">
-      <%= f.text_field :name, class: 'form-control', placeholder: "Enter your playlist name" %>
-      <%= f.submit class: 'btn btn-gradient' %>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <%= form_for :playlist, as: :get, url: export_path, method: :get, html: { class: "new_post", id: "new_post" } do |f| %>
+        <div class="form-group">
+          <%= f.text_field :name, class: 'form-control', placeholder: "Type playlist name" %>
+          <%= f.submit class: 'btn btn-gradient' %>
+        </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
-</div>
 
 <div class="container">
-<% @tracks.each do |track| %>
-  <%= render "shared/library", locals: { track: track } %>
-<% end %>
+  <% @tracks.each do |track| %>
+    <%= render "shared/library_card", locals: { track: track } %>
+  <% end %>
 </div>
 
-<div class="cta">
-   <h3>Upcoming events nearby</h3>
-   <h4>Recommended for you</h4>
-
-</div>
-
-<section class="mx-3 carousel slide" data-ride="carousel" id="postsCarousel">
-      <div class="carousel-inner">
-        <% @recommended_events.each_with_index do |event, index| %>
-          <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
-                  <div class="card">
-                      <%= render "pages/caroussel", event: event %>
-                  </div>
-              </div>
-        <%end %>
-
-      </div>
-</section>
-
- <script>
-      (function($) {
-    "use strict";
-
-    // manual carousel controls
-    $('.next').click(function(){ $('.carousel').carousel('next');return false; });
-    $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
-
-})(jQuery);
-</script>
 
 
 

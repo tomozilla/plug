@@ -1,62 +1,47 @@
 <div class="container" id="<%=locals[:track].id%>">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
-    <div class="card-product">
-      <% unless locals[:track].artists.empty? %>
-        <% if locals[:track].artists.first.photo.attached? %>
-          <%= cl_image_tag locals[:track].artists.first.photo.key, crop: :fill %>
+      <div class="card-product">
+        <% unless locals[:track].artists.empty? %>
+          <% unless locals[:track].image_url.nil? %>
+            <%= cl_image_tag locals[:track].image_url, crop: :fill %>
+          <% else %>
+            <%= image_tag "sample_1.png" %>
+          <% end %>
         <% else %>
           <%= image_tag "sample_1.png" %>
         <% end %>
-      <% else %>
-        <%= image_tag "sample_1.png" %>
-      <% end %>
 
-    <div class="card-product-infos">
-      <div class="play-button">
-        <i class="fas fa-play" id="play-pause" data-sid="<%=locals[:track].spotify_id%>"></i>
-      </div>
+        <div class="card-product-infos">
+          <div class="play-button">
+            <i class="fas fa-play" id="play-pause" data-sid="<%=locals[:track].spotify_id%>"></i>
+          </div>
 
-      <div class="star-card">
-       <% unless locals[:event].nil? %>
-        <% unless TracksUser.find_by(track: locals[:track], user: current_user, event: locals[:event]).nil? %>
-          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-minus-square", :remote => true, method: :delete  %>
-        <% else %>
-          <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-plus-square", :remote => true, method: :post  %>
-        <% end %>
-      <% end %>
-      </div>
+          <div class="star-card">
+            <% unless locals[:event].nil? %>
+              <% unless TracksUser.find_by(track: locals[:track], user: current_user, event: locals[:event]).nil? %>
+                <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-minus-square", :remote => true, method: :delete  %>
+              <% else %>
+                <%= link_to "", star_track_path(track: locals[:track], event: locals[:event]), class: "fas fa-plus-square", :remote => true, method: :post  %>
+              <% end %>
+            <% end %>
+          </div>
 
-     <div class="music">
-        <div class='container'>
-          <div class='bar'></div>
-          <div class='bar'></div>
-          <div class='bar'></div>
-          <div class='bar'></div>
-          <div class='bar'></div>
-          <div class='bar'></div>
-          <div class='bar'></div>
-          <div class='bar'></div>
-          <div class='bar'></div>
-          <div class='bar'></div>
+          <div class="card-text">
+            <h1 class="max-lines" ><%= locals[:track].name %></h1>
+            <h2 class="max-lines"><%= locals[:track].artists.map {|artist| artist.name }.join(", ") %></h2>
+            <h3 class="max-lines"><%= locals[:track].album %></h3>
+            <div class="music">
+              <div class='container'>
+                <div class='bar'></div><div class='bar'></div><div class='bar'></div>
+              </div>
+            </div>
+            <% unless locals[:likes].nil? %>
+              <p><em>Liked by <%= locals[:likes]  %> user(s)</em></p>
+            <% end %>
+          </div>
         </div>
-      </div>
-
-
-        <h1 class="max-lines" ><%= locals[:track].name %></h1>
-
-        <h2 class="max-lines"><%= locals[:track].artists.map {|artist| artist.name }.join(", ") %></h2>
-
-        <h3 class="max-lines"><%= locals[:track].album %></h3>
-        <% unless locals[:likes].nil? %>
-          <p><em>Liked by <%= locals[:likes]  %> user(s)</em></p>
-        <% end %>
-
-      </div>
-
-
       </div>
     </div>
   </div>
-</div>
 </div>

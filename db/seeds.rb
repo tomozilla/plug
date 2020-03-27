@@ -24,20 +24,6 @@ users = [
     refresh_token: ENV['USER1_REFRESH_TOKEN'],
     spotify_id: ENV['USER1_SPOTIFY_ID'],
     updated_at: "2020-02-20 11:28:40"
-  },
-  {
-    email: ENV['USER2_EMAIL'],
-    password: "111111",
-    refresh_token: ENV['USER2_REFRESH_TOKEN'],
-    spotify_id: ENV['USER2_SPOTIFY_ID'],
-    updated_at: "2020-02-20 11:28:40"
-  },
-  {
-    email: ENV['USER3_EMAIL'],
-    password: "111111",
-    refresh_token: ENV['USER3_REFRESH_TOKEN'],
-    spotify_id: ENV['USER3_SPOTIFY_ID'],
-    updated_at: "2020-02-20 11:28:40"
   }
 ]
 
@@ -47,12 +33,16 @@ users.each do |user|
   FetchTracksService.downloadTracks(createdUser)
 end
 
-140.times do
+puts "1"
+
+10.times do
   User.create!(
     email: Faker::Internet.email,
     spotify_id: Faker::Internet.username,
     password: "111111")
 end
+
+puts "2"
 
 events = [
   {
@@ -100,7 +90,7 @@ events = [
     longitude: 139.730918,
     genre: "House"
   },
-    {
+  {
     date: Faker::Date.between(from: 1.days.from_now, to: 7.days.from_now),
     venue: "ageHa",
     # address: "Tokyo, Shibuya City, Ebisunishi, 1 Chome−34−17",
@@ -109,7 +99,7 @@ events = [
     longitude: 139.825334,
     genre: "Dance/Electronic"
   },
-    {
+  {
     date: Faker::Date.between(from: 14.days.ago, to: 6.days.ago),
     venue: "LIQUIDROOM",
     # address: "Tokyo, Shibuya City, Higashi, 3 Chome-16-6",
@@ -147,14 +137,18 @@ events = [
   }
 ]
 
+puts "3"
+
 events.each do |event|
+  
   new_event = Event.create(event)
-  143.times do
+  2.times do
     UsersEvent.create!(
       user: User.all.sample,
       event: new_event)
   end
-  20.times do
+
+  2.times do
     TracksUser.create!(
       event: new_event,
       user: new_event.users.sample,
@@ -162,7 +156,9 @@ events.each do |event|
   end
 end
 
-1000.times do
+puts "4"
+
+2.times do
   TracksUser.create!(
     event: Event.find_by(venue: "UNIT"),
     user: Event.find_by(venue: "UNIT").users.sample,

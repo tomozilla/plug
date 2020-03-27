@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_114144) do
+ActiveRecord::Schema.define(version: 2020_03_27_120629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_03_10_114144) do
     t.string "spotify_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["spotify_id"], name: "index_artists_on_spotify_id"
   end
 
   create_table "artists_tracks", force: :cascade do |t|
@@ -63,8 +64,8 @@ ActiveRecord::Schema.define(version: 2020_03_10_114144) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.string "artist"
-    t.string "authentication_token", limit: 30
     t.string "address"
+    t.string "authentication_token", limit: 30
     t.string "genre"
     t.index ["authentication_token"], name: "index_events_on_authentication_token", unique: true
   end
@@ -75,6 +76,8 @@ ActiveRecord::Schema.define(version: 2020_03_10_114144) do
     t.string "spotify_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
+    t.index ["spotify_id"], name: "index_tracks_on_spotify_id"
   end
 
   create_table "tracks_users", force: :cascade do |t|
@@ -106,6 +109,7 @@ ActiveRecord::Schema.define(version: 2020_03_10_114144) do
     t.string "image_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["spotify_id"], name: "index_users_on_spotify_id"
   end
 
   create_table "users_events", force: :cascade do |t|

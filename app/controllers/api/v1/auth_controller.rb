@@ -9,11 +9,6 @@ class Api::V1::AuthController < ApplicationController
       client_id: ENV['SPOTIFY_CLIENT_ID'],
       scope: "user-library-read 
       user-read-email
-      playlist-read-collaborative
-      playlist-modify-private
-      user-modify-playback-state
-      user-read-private
-      user-top-read
       playlist-modify-private
       playlist-modify-public
       streaming",

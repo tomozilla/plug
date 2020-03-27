@@ -37,7 +37,6 @@ class EventsController < ApplicationController
     @event = Event.includes(users: :tracks).find(params[:id])
     @users = @event.users.where.not(id: current_user.id)
     @track_counter = {}
-
     @users.each do |user|
       user.tracks_users.each do |user_track|
         @track_counter[user_track.track_id] ||= [0, user_track.track]
@@ -53,10 +52,10 @@ class EventsController < ApplicationController
       track: Track.find(params["track"].to_i),
       source: "events",
       user: current_user)
-      @event = @tracksUser.event
-      @track = @tracksUser.track
-      @number_of_likes = getLikes(@tracksUser)
-      render "events/refresh_card"
+    @event = @tracksUser.event
+    @track = @tracksUser.track
+    @number_of_likes = getLikes(@tracksUser)
+    render "events/refresh_card"
   end
 
   def unstar_track
@@ -65,11 +64,11 @@ class EventsController < ApplicationController
       track: Track.find(params["track"].to_i),
       source: "events",
       user: current_user)
-      @event = @tracksUser.event
-      @track = @tracksUser.track
-      @number_of_likes = getLikes(@tracksUser)
-      @tracksUser.destroy
-      render "events/refresh_card"
+    @event = @tracksUser.event
+    @track = @tracksUser.track
+    @number_of_likes = getLikes(@tracksUser)
+    @tracksUser.destroy
+    render "events/refresh_card"
   end
 
   def getLikes(tracksUser)
