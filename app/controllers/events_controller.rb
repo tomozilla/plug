@@ -2,7 +2,7 @@ require 'json'
 require 'open-uri'
 
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     if params[:lat] && params[:lon]
@@ -11,12 +11,9 @@ class EventsController < ApplicationController
       @main_event = @events.first
       @sub_events = @events[1..4]
     end
-    if current_user.nil?
-      redirect_to api_v1_login_path
-    else
-      RefreshTokenService.refresh_token(current_user)
-      FetchTracksService.downloadTracks(current_user)
-    end
+    redirect_to api_v1_login_path if current_user.nil?
+    RefreshTokenService.refresh_token(current_user)
+    FetchTracksService.downloadTracks(current_user)
   end
 
   def check_in
@@ -31,18 +28,22 @@ class EventsController < ApplicationController
   end
 
   def show
-    admin_user = User.find_by(email: ENV['ADMIN_EMAIL'])
-    RefreshTokenService.refresh_token(admin_user)
-    @admin_token = admin_user.access_token
-    @event = Event.includes(users: :tracks).find(params[:id])
-    @users = @event.users.where.not(id: current_user.id)
-    @track_counter = {}
-    @users.each do |user|
-      user.tracks_users.each do |user_track|
-        @track_counter[user_track.track_id] ||= [0, user_track.track]
-        @track_counter[user_track.track_id][0] += 1
+    if current_user.nil?
+      redirect_to api_v1_login_path 
+    else
+      admin_user = User.find_by(email: ENV['ADMIN_EMAIL'])
+      RefreshTokenService.refresh_token(admin_user)
+      @admin_token = admin_user.access_token
+      @event = Event.includes(users: :tracks).find(params[:id])
+      @users = @event.users.where.not(id: current_user.id)
+      @track_counter = {}
+      @users.each do |user|
+        user.tracks_users.each do |user_track|
+          @track_counter[user_track.track_id] ||= [0, user_track.track]
+          @track_counter[user_track.track_id][0] += 1
+        end
+        @tracks = @track_counter.sort_by { |track_id, data| data.first }.reverse!.take(20).map { |_, data| data.second }
       end
-      @tracks = @track_counter.sort_by { |track_id, data| data.first }.reverse!.take(20).map { |_, data| data.second }
     end
   end
 
@@ -70,6 +71,8 @@ class EventsController < ApplicationController
     @tracksUser.destroy
     render "events/refresh_card"
   end
+
+  private
 
   def getLikes(tracksUser)
     @users = @event.users.where.not(id: current_user.id)

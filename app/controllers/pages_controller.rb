@@ -1,18 +1,18 @@
 class PagesController < ApplicationController
- skip_before_action :authenticate_user!, only: [:home, :scan_events]
+ skip_before_action :authenticate_user!, only: [:home, :library, :scan_events]
 
   def library
-    if user_signed_in?
+    if current_user.nil?
+      redirect_to api_v1_login_path 
+    else
       @user = current_user
       @tracks = @user.favorited_tracks
-    else
-      redirect_to "/"
+      past_event_genre = current_user.events.find_by(artist: "Bob Moses").genre
+      #hard coded - should be reviewed
+      start_date = 1.days.from_now
+      end_date = 7.days.from_now
+      @recommended_events = Event.where(genre: past_event_genre, date: start_date.beginning_of_day..end_date.end_of_day)
     end
-    past_event_genre = current_user.events.find_by(artist: "Bob Moses").genre
-    #hard coded - should be reviewed
-    start_date = 1.days.from_now
-    end_date = 7.days.from_now
-    @recommended_events = Event.where(genre: past_event_genre, date: start_date.beginning_of_day..end_date.end_of_day)
   end
 
   def export_spotify
@@ -28,9 +28,6 @@ class PagesController < ApplicationController
 
   def scan_events
     redirect_to api_v1_login_path if current_user.nil?
-  end
-
-  def recommend_events
   end
 
 end
