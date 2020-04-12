@@ -1,47 +1,40 @@
-  <div class="cta">
-
-    <h2>Share your music with people at the same event</h2>
-    <% if @main_event.nil? %>
-    <h1 align="center"><%="We cannot find your location"%></h1>
-    <% else %>
-    <h1 align="center"><%="You are at #{@main_event.artist} concert"%></h1>
-    <% end %>
-  </div>
-
-  <div class="container">
-    <% if @main_event.nil? %>
-
-    <div class="col-12 col-lg-6">
-      <div class="card-product-event">
-        <p>No event found</p>
-        <%= image_tag("artist.png") %>
+<div class="container">
+  <% if @main_event.nil? %>
+    <div class="cta row justify-content-center">
+      <div class="col-12 col-lg-6">
+        <h1><%="We cannot find your location"%></h1>
       </div>
     </div>
-
-    <% else %>
-
-    <div class="row">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6">
+        <div class="card-product-event">
+          <p>No event found</p>
+          <%= image_tag("artist.png") %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="cta row justify-content-center">
+      <div class="col-12 col-lg-6">
+        <h2><%="Are you attending #{@main_event.artist}?"%></h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
       <div class="col-12 col-lg-6">
         <%= render "events/card", event: @main_event, sub_event: false %>
       </div>
     </div>
-  </div>
-
-  <div class="cta" align="center">
-    <h1>Today's other events close to you</h1>
-  </div>
-  <div class="container">
-    <div class="row">
-      <% @sub_events.each do |event| %>
+    <div class="cta row justify-content-center">
       <div class="col-12 col-lg-6">
-        <%= render "events/card", event: event, sub_event: true %>
+        <h1>Today's other events close to you</h1>
       </div>
-      <% end %>
     </div>
-
+    <% @sub_events.each do |event| %>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+          <%= render "events/card", event: event, sub_event: true %>
+        </div>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
-</div>
-
-

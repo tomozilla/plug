@@ -31,19 +31,6 @@
     overflow:hidden;
 }
 
-// .container {
-//   padding-left: 15px;
-//   padding-right: 15px;
-//   margin-right: auto;
-//   margin-left: auto;
-// }
-
-
-.container.carousel-inner {
-  // width: 500px;
-
-}
-
  .card {
   margin-bottom: 50px;
 }
@@ -67,7 +54,7 @@
   font-weight: bold;
   margin-top: 20px;
   margin-left: 10px;
-  color: #E4C1F9;
+  color: $sp-orange;
 }
 
 .card-caroussel h3 {
@@ -91,7 +78,6 @@
   position: absolute;
   bottom: 84px;
   right: 10px;
-
 }
 
 .card-caroussel p {
@@ -105,9 +91,7 @@
   bottom: 0px;
   right: 20px;
   font-weight: bold;
-
 }
-
 
 .card-caroussel h5 {
   margin-top: 20px;
@@ -116,6 +100,5 @@
   font-weight: bold;
   color: white;
   opacity: .8;
-
 }
 

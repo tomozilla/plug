@@ -22,8 +22,6 @@ class Api::V1::UsersController < ApplicationController
 
       user_response = RestClient.get('https://api.spotify.com/v1/me', header)
       user_params = JSON.parse(user_response.body)
-      
-      p user_params
       user_params["images"].empty? ? image_url = nil : image_url = user_params["images"][0]["url"]
       @user = User.find_for_spotify(
         spotify_id: user_params["id"],
