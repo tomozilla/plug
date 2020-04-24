@@ -1,9 +1,13 @@
 <div class="home-video-wrapper">
   <%= video_tag "concert.mp4", autoplay: "", loop: "", muted: "", playsinline: '', class: 'home_video' %>
   <div class="home">
-  <h1><strong>Festivify</strong></h1>
-  <p >Find popular songs in your music festival</p>
-  <%= link_to "See events", scan_events_path, class: "btn btn-gradient", id: "event-index" %>
+    <h1><strong>Sharefesta</strong></h1>
+    <p >Find popular songs in your music festival</p>
+    <% if user_signed_in? %>
+      <%= link_to "See events", scan_events_path, class: "btn btn-gradient", id: "event-index" %>
+    <% else %>
+      <%= link_to "Continue with Spotify", api_v1_login_path, class: "btn btn-spotify" %>
+    <% end %>
   </div>
 </div>
 

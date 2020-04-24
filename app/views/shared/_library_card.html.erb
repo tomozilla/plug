@@ -1,11 +1,8 @@
-<div class="card-product-event">
-  <div class="card-product-event-infos">
-    <h2 class="max-lines"><%= locals[:track].name %></h2>
-      <h1 class="max-lines"><%= locals[:track].artists.map {|artist| artist.name }.join(", ") %></h1>
-      <em><p><%= "Added at #{locals[:track].events.first.artist} concert" %></p></em>
-      <% unless locals[:likes].nil? %>
-        <p><em>Liked by <%= locals[:likes]  %> user(s)</em></p>
-      <% end %>
+<div class="card-product">
+  <div class="card-product-infos">
+    <h1 class="max-lines"><%= locals[:track].name %></h1>
+      <h2 class="max-lines"><%= locals[:track].artists.map {|artist| artist.name }.join(", ") %></h2>
+      <h3 class="max-lines"><%= "Added at #{locals[:track].events.first.artist} concert" %></h3>
   </div>
   <% unless locals[:track].artists.empty? %>
     <% unless locals[:track].image_url.nil? %>

@@ -4,9 +4,7 @@
   <div class="cta">
     <p align="center"><%= "#{@event.users.count} people at #{@event.artist} concert at #{@event.venue} like tracks below in Spotify"%></p>
   </div>
-
 </div>
-
 
 <div class="container">
  <div class="row justify-content-center">
@@ -15,10 +13,9 @@
 </div>
 
 <% @tracks.each do |track| %>
-<% number_of_likes = @track_counter[track.id][0] %>
-<%= render "shared/track_card", locals: { track: track, event: @event, likes: number_of_likes } %>
+  <% number_of_likes = @track_counter[track.id][0] %>
+  <%= render "shared/track_card", locals: { track: track, event: @event, likes: number_of_likes } %>
 <% end %>
-
 
 <script src="https://sdk.scdn.co/spotify-player.js"></script>
 <script>

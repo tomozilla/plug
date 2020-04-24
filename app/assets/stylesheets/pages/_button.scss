@@ -12,6 +12,22 @@
   opacity: 1;
 }
 
+.btn-spotify {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  margin: 10px 14px;
+  background-color:#5fba56;
+  opacity: 1.0;
+  font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.btn-spotify:hover {
+  color: white;
+  background-color: #6fd862;
+  opacity: 1.0;
+}
+
 .btn-flat {
   color: white;
   padding: 8px 24px;

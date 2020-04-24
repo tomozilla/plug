@@ -1,6 +1,6 @@
 <div class="navbar sticky-top navbar-expand-sm navbar-light navbar-plug">
   <%= link_to root_path, class: "navbar-brand" do %>
-  <%= image_tag "plug_logo.png" %>
+  <%= image_tag "plug_logo.png", class: "navbar-brand-img" %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,9 +25,7 @@
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </li>
       <% else %>
-      <li class="nav-item">
-        <%= link_to "Login", api_v1_login_path, class: "btn btn-ghost" %>
-      </li>
+
       <% end %>
     </ul>
   </div>
