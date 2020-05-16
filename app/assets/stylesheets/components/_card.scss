@@ -204,8 +204,6 @@ transform: scale(1.1);
   }
   }
 
-
-
 .card-product-event {
   background: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -215,12 +213,10 @@ transform: scale(1.1);
   margin-top: 10px;
   padding: 7px;
   overflow: hidden;
+  height: 100px;
 }
 
-
 .card-product-sub-event {
-  // height: 200px;
-  // width: 100%;
   background: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -228,7 +224,6 @@ transform: scale(1.1);
   align-items: center;
   margin-top: 10px;
   overflow: hidden;
-
 }
 
 .inner-box {

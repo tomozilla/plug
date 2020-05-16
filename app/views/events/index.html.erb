@@ -9,7 +9,7 @@
       <div class="col-12 col-lg-6">
         <div class="card-product-eventpp">
           <p>No event found</p>
-          <%= image_tag("artist.png") %>
+          <%= image_tag "artist.png", alt: "No Event", width: 500 %>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
     <% if @main_event[0].nil? %>
       <div class="cta row justify-content-center">
         <div class="col-12 col-lg-6">
-          <h2>We can't find a music festival near you. Come back when you are attending the festival</h2>
+          <h2>We can't find a music festival near you. Come back when you are attending the concert.</h2>
         </div>
       </div>  
     <% else %>

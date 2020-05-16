@@ -12,9 +12,14 @@
   </div>
 </div>
 
-<% @tracks.each do |track| %>
-  <% number_of_likes = @track_counter[track.id][0] %>
-  <%= render "shared/track_card", locals: { track: track, event: @event, likes: number_of_likes } %>
+<% if @tracks.nil? %>
+  <h1>You are the first one!</h1>
+  <h1>Come back later again!</h1>
+<% else %>
+  <% @tracks.each do |track| %>
+    <% number_of_likes = @track_counter[track.id][0] %>
+    <%= render "shared/track_card", locals: { track: track, event: @event, likes: number_of_likes } %>
+  <% end %>
 <% end %>
 
 <script src="https://sdk.scdn.co/spotify-player.js"></script>

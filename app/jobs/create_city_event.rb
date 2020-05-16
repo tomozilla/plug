@@ -8,8 +8,8 @@ class CreateCityEvent < ApplicationJob
     event <<
     {
       date: today,
-      venue: city.city_ascii,
-      artist: "#{city.city_ascii}Ranking",
+      venue: "Top 20 songs in #{city.city_ascii} for #{Date.today.strftime("%B")}",
+      artist: city.city_ascii,
       latitude: city.lat,
       longitude: city.lng,
       genre: "Ranking",
