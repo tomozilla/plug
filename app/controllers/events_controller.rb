@@ -8,8 +8,8 @@ class EventsController < ApplicationController
     if params[:lat] && params[:lon]
       today = 0.days.from_now
       @events = Event.near([params[:lat], params[:lon]], 30).where(date: 10.days.ago..7.days.from_now)
-      @main_event = @events.first
-      @sub_events = @events[1..4]
+      @main_event = @events.where.not(sub_event: true)
+      @sub_events = @events.where(sub_event: true)
     end
     redirect_to api_v1_login_path if current_user.nil?
     RefreshTokenService.refresh_token(current_user)

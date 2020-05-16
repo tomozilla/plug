@@ -1,5 +1,5 @@
 <div class="container">
-  <% if @main_event.nil? %>
+  <% if @events.nil? %>
     <div class="cta row justify-content-center">
       <div class="col-12 col-lg-6">
         <h1><%="We cannot find your location"%></h1>
@@ -7,34 +7,43 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-12 col-lg-6">
-        <div class="card-product-event">
+        <div class="card-product-eventpp">
           <p>No event found</p>
           <%= image_tag("artist.png") %>
         </div>
       </div>
     </div>
   <% else %>
-    <div class="cta row justify-content-center">
-      <div class="col-12 col-lg-6">
-        <h2><%="Are you attending #{@main_event.artist}?"%></h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-6">
-        <%= render "events/card", event: @main_event, sub_event: false %>
-      </div>
-    </div>
-    <div class="cta row justify-content-center">
-      <div class="col-12 col-lg-6">
-        <h1>Today's other events close to you</h1>
-      </div>
-    </div>
-    <% @sub_events.each do |event| %>
-      <div class="row justify-content-center">
+    <% if @main_event[0].nil? %>
+      <div class="cta row justify-content-center">
         <div class="col-12 col-lg-6">
-          <%= render "events/card", event: event, sub_event: true %>
+          <h2>We can't find a music festival near you. Come back when you are attending the festival</h2>
+        </div>
+      </div>  
+    <% else %>
+      <div class="cta row justify-content-center">
+        <div class="col-12 col-lg-6">
+          <h2><%="Are you attending #{@main_event.artist}?"%></h2>
         </div>
       </div>
-    <% end %>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+          <%= render "events/card", event: @main_event, sub_event: false %>
+        </div>
+      </div>
+    <% end %>  
+
+      <div class="cta row justify-content-center">
+        <div class="col-12 col-lg-6">
+          <h1>You can also check out popular songs in your city now!</h1>
+        </div>
+      </div>
+      <% @sub_events.each do |event| %>
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-6">
+            <%= render "events/card", event: event, sub_event: true %>
+          </div>
+        </div>
+      <% end %>
   <% end %>
 </div>

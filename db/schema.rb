@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_120629) do
+ActiveRecord::Schema.define(version: 2020_05_05_124025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_120629) do
     t.string "authentication_token", limit: 30
     t.string "address"
     t.string "genre"
+    t.boolean "sub_event"
     t.index ["authentication_token"], name: "index_events_on_authentication_token", unique: true
   end
 
@@ -119,6 +120,20 @@ ActiveRecord::Schema.define(version: 2020_03_27_120629) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_users_events_on_event_id"
     t.index ["user_id"], name: "index_users_events_on_user_id"
+  end
+
+  create_table "world_cities", force: :cascade do |t|
+    t.string "city"
+    t.string "city_ascii"
+    t.float "lat"
+    t.float "lng"
+    t.string "country"
+    t.string "iso2"
+    t.string "iso3"
+    t.string "admin_name"
+    t.string "capital"
+    t.string "population"
+    t.string "city_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

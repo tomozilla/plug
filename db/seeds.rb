@@ -1,4 +1,5 @@
 require 'faker'
+require 'csv'
 
 ArtistsTrack.destroy_all
 puts "Artists_tracks Destroyed"
@@ -16,6 +17,23 @@ User.destroy_all
 puts "Users Destroyed"
 
 puts "Start Updating databse"
+
+
+CSV.foreach(Rails.root.join('worldcities.csv'), headers: true) do |row|
+  WorldCity.create!({
+    city:row[0],
+    city_ascii:row[1],
+    lat:row[2],
+    lng:row[3],
+    country:row[4],
+    iso2:row[5],
+    iso3:row[6],
+    admin_name:row[7],
+    capital:row[8],
+    population:row[9],
+    city_id:row[10]
+  })
+end
 
 users = [
   {
@@ -54,7 +72,7 @@ events = [
     longitude: 139.708336,
     genre: "Dance/Electronic"
   },
-    {
+  {
     date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
     venue: "LIQUIDROOM",
     # address: "Tokyo, Shibuya City, Higashi, 3 Chome-16-6",
