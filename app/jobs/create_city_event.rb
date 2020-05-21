@@ -17,5 +17,4 @@ class CreateCityEvent < ApplicationJob
     }
     Event.create!(event)
   end
-
 end
