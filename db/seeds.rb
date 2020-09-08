@@ -54,10 +54,10 @@ users.each do |user|
 end
 
 10.times do
-  User.create!(Event.
-    email: Faker::Internet.email,Event.
-    spotify_id: Faker::Internet.username,Event.
-    password: "111111")Event.
+  User.create!(
+    email: Faker::Internet.email,
+    spotify_id: Faker::Internet.username,
+    password: "111111")
 end
 
 events = [
