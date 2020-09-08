@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   def index
     if params[:lat] && params[:lon]
       today = 0.days.from_now
-      @events = Event.near([params[:lat], params[:lon]], 30).where(date: 10.days.ago..7.days.from_now)
+      @events = Event.near([params[:lat], params[:lon]], 50).where(date: 10.days.ago..30.days.from_now)
       @main_event = @events.where.not(sub_event: true)
       @sub_events = @events.where(sub_event: true)
     end

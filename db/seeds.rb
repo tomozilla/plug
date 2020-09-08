@@ -62,7 +62,7 @@ end
 
 events = [
   {
-    date: Faker::Date.between(from: 0.days.from_nEvent.ow, to: 0.days.from_now),
+    date: Faker::Date.between(from: 0.days.from_now, to: 30.days.from_now),
     venue: "UNIT",
     # address: "Tokyo, Shibuya City, Ebisunishi, 1 Chome−34−17",
     artist: "Bob Moses",
@@ -72,7 +72,7 @@ events = [
     sub_event: false
   },
   {
-    date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
+    date: Faker::Date.between(from: 0.days.from_now, to: 30.days.from_now),
     venue: "LIQUIDROOM",
     # address: "Tokyo, Shibuya City, Higashi, 3 Chome-16-6",
     artist: "Carl Cox",
@@ -82,7 +82,7 @@ events = [
     sub_event: false
   },
   {
-    date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
+    date: Faker::Date.between(from: 0.days.from_now, to: 30.days.from_now),
     venue: "The Room",
     # address: "Tokyo, Shibuya City, Sakuragaokacho, 15−19",
     artist: "Emotional Oranges",
@@ -92,7 +92,7 @@ events = [
     sub_event: false
   },
   {
-    date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
+    date: Faker::Date.between(from: 0.days.from_now, to: 30.days.from_now),
     venue: "SEL OCTAGON TOKYO",
     # address: "Tokyo, Minato City, Roppongi, 7 Chome−8−6",
     artist: "FDVM",
@@ -102,7 +102,7 @@ events = [
     sub_event: false
   },
   {
-    date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
+    date: Faker::Date.between(from: 0.days.from_now, to: 30.days.from_now),
     venue: "Billboard Live Tokyo",
     # address: "Tokyo, Minato City, Akasaka, 9 Chome−7−4",
     artist: "GoldLink",
@@ -112,7 +112,7 @@ events = [
     sub_event: false
   },
   {
-    date: Faker::Date.between(from: 1.days.from_now, to: 7.days.from_now),
+    date: Faker::Date.between(from: 1.days.from_now, to: 30.days.from_now),
     venue: "ageHa",
     # address: "Tokyo, Shibuya City, Ebisunishi, 1 Chome−34−17",
     artist: "Loud Luxury",
@@ -124,7 +124,7 @@ events = [
 ]
 
 events.each do |event|  
-  new_event = Event.create(event)
+  new_event = Event.create!(event)
   2.times do
     UsersEvent.create!(
       user: User.all.sample,
