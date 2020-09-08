@@ -51,17 +51,17 @@ users.each do |user|
   createdUser = User.create(user)
   RefreshTokenService.refresh_token(createdUser)
   FetchTracksService.downloadTracks(createdUser)
-endEvent.
-Event.
-10.times doEvent.
+end
+
+10.times do
   User.create!(Event.
     email: Faker::Internet.email,Event.
     spotify_id: Faker::Internet.username,Event.
     password: "111111")Event.
-endEvent.
-Event.
-events = [Event.
-  {Event.
+end
+
+events = [
+  {
     date: Faker::Date.between(from: 0.days.from_nEvent.ow, to: 0.days.from_now),
     venue: "UNIT",
     # address: "Tokyo, Shibuya City, Ebisunishi, 1 Chome−34−17",
@@ -123,8 +123,7 @@ events = [Event.
   }
 ]
 
-events.each do |event|
-  
+events.each do |event|  
   new_event = Event.create(event)
   2.times do
     UsersEvent.create!(
