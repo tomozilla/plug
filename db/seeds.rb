@@ -15,6 +15,8 @@ Event.destroy_all
 puts "Events Destroyed"
 User.destroy_all
 puts "Users Destroyed"
+WorldCity.destroy_all
+puts "World Cities Destroyed"
 
 puts "Start Updating databse"
 
@@ -49,28 +51,25 @@ users.each do |user|
   createdUser = User.create(user)
   RefreshTokenService.refresh_token(createdUser)
   FetchTracksService.downloadTracks(createdUser)
-end
-
-puts "1"
-
-10.times do
-  User.create!(
-    email: Faker::Internet.email,
-    spotify_id: Faker::Internet.username,
-    password: "111111")
-end
-
-puts "2"
-
-events = [
-  {
-    date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
+endEvent.
+Event.
+10.times doEvent.
+  User.create!(Event.
+    email: Faker::Internet.email,Event.
+    spotify_id: Faker::Internet.username,Event.
+    password: "111111")Event.
+endEvent.
+Event.
+events = [Event.
+  {Event.
+    date: Faker::Date.between(from: 0.days.from_nEvent.ow, to: 0.days.from_now),
     venue: "UNIT",
     # address: "Tokyo, Shibuya City, Ebisunishi, 1 Chome−34−17",
     artist: "Bob Moses",
     latitude: 35.634718,
     longitude: 139.708336,
-    genre: "Dance/Electronic"
+    genre: "Dance/Electronic",
+    sub_event: false
   },
   {
     date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
@@ -79,7 +78,8 @@ events = [
     artist: "Carl Cox",
     latitude: 35.648224,
     longitude: 139.702427,
-    genre: "Dance/Electronic"
+    genre: "Dance/Electronic",
+    sub_event: false
   },
   {
     date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
@@ -88,7 +88,8 @@ events = [
     artist: "Emotional Oranges",
     latitude: 35.656655,
     longitude: 139.701640,
-    genre: "R&B/pop"
+    genre: "R&B/pop",
+    sub_event: false
   },
   {
     date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
@@ -97,7 +98,8 @@ events = [
     artist: "FDVM",
     latitude: 35.665174,
     longitude: 139.729830,
-    genre: "French House"
+    genre: "French House",
+    sub_event: false
   },
   {
     date: Faker::Date.between(from: 0.days.from_now, to: 0.days.from_now),
@@ -106,7 +108,8 @@ events = [
     artist: "GoldLink",
     latitude: 35.666687,
     longitude: 139.730918,
-    genre: "House"
+    genre: "House",
+    sub_event: false
   },
   {
     date: Faker::Date.between(from: 1.days.from_now, to: 7.days.from_now),
@@ -115,47 +118,10 @@ events = [
     artist: "Loud Luxury",
     latitude: 35.642927,
     longitude: 139.825334,
-    genre: "Dance/Electronic"
-  },
-  {
-    date: Faker::Date.between(from: 14.days.ago, to: 6.days.ago),
-    venue: "LIQUIDROOM",
-    # address: "Tokyo, Shibuya City, Higashi, 3 Chome-16-6",
-    artist: "FKJ",
-    latitude: 35.648224,
-    longitude: 139.702427,
-    genre: "French House"
-  },
-  {
-    date: Faker::Date.between(from: 1.days.from_now, to: 7.days.from_now),
-    venue: "The Room",
-    # address: "Tokyo, Shibuya City, Sakuragaokacho, 15−19",
-    artist: "Flume",
-    latitude: 35.656655,
-    longitude: 139.701640,
-    genre: "Dance/Electronic"
-  },
-  {
-    date: Faker::Date.between(from: 1.days.from_now, to: 7.days.from_now),
-    venue: "SEL OCTAGON TOKYO",
-    # address: "Tokyo, Minato City, Roppongi, 7 Chome−8−6",
-    artist: "Joe Hertz",
-    latitude: 35.665174,
-    longitude: 139.729830,
-    genre: "Dance/Electronic"
-  },
-  {
-    date: Faker::Date.between(from: 14.days.ago, to: 6.days.ago),
-    venue: "Billboard Live Tokyo",
-    # address: "Tokyo, Minato City, Akasaka, 9 Chome−7−4",
-    artist: "Purple Disco Machine",
-    latitude: 35.666687,
-    longitude: 139.730918,
-    genre: "Disco"
+    genre: "Dance/Electronic",
+    sub_event: false
   }
 ]
-
-puts "3"
 
 events.each do |event|
   
@@ -172,13 +138,4 @@ events.each do |event|
       user: new_event.users.sample,
       track: Track.all.sample)
   end
-end
-
-puts "4"
-
-2.times do
-  TracksUser.create!(
-    event: Event.find_by(venue: "UNIT"),
-    user: Event.find_by(venue: "UNIT").users.sample,
-    track: Track.all.sample)
 end

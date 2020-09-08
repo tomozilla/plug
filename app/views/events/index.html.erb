@@ -23,12 +23,12 @@
     <% else %>
       <div class="cta row justify-content-center">
         <div class="col-12 col-lg-6">
-          <h2><%="Are you attending #{@main_event.artist}?"%></h2>
+          <h2><%="Are you attending #{@main_event[0].artist}?"%></h2>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-12 col-lg-6">
-          <%= render "events/card", event: @main_event, sub_event: false %>
+          <%= render "events/card", event: @main_event[0], sub_event: false %>
         </div>
       </div>
     <% end %>  

@@ -32,14 +32,14 @@ class Event < ApplicationRecord
       end
     end
     
-    unless sub_event
-      #find address from venue
-      address = API with venue???
-      # Geocode to find coordinates from address
-      # Save to Event Model
-      self.latitude = Geocoder.search(address)[0].latitude
-      self.longitude = Geocoder.search(address)[0].longitude
-      save
-    end
+    # unless sub_event
+    #   #find address from venue
+    #   address = API with venue???
+    #   # Geocode to find coordinates from address
+    #   # Save to Event Model
+    #   self.latitude = Geocoder.search(address)[0].latitude
+    #   self.longitude = Geocoder.search(address)[0].longitude
+    #   save
+    # end
   end
 end
