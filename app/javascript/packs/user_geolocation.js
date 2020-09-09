@@ -22,6 +22,12 @@ function findMe() {
       });
     } else {
       geolocFail();
+      const currentLatitude = 35.642927;
+      const currentLongitude = 139.825334;
+      const startButtons = document.querySelectorAll("#event-index");
+      startButtons.forEach((startButton)=>{
+      startButton.attributes.href.value = `${startButton.attributes.href.value}?lat=${currentLatitude}&lon=${currentLongitude}`;
+      });
     }
   // }
 }
