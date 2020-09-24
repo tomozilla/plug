@@ -18,10 +18,18 @@ class Event < ApplicationRecord
     header = {
       Authorization: "563492ad6f91700001000001dd3686cea808431a9d74a817439f2fdb" 
     }
-    pexels_response = RestClient.get("https://api.pexels.com/v1/search?query=#{search_word}&per_page=2&page=1", header)
-    pexels_params = JSON.parse(pexels_response.body)
+    
+    begin
+      pexels_response = RestClient.get("https://api.pexels.com/v1/search?query=#{search_word}&per_page=2&page=1", header)
+      pexels_params = JSON.parse(pexels_response.body)
+    rescue RestClient::Exception
+      puts "Rest Error"
+      pexels_params = nil
+    end  
+
+
     print "==============================small url=============================="
-    unless pexels_params["photos"][0].nil?
+    unless ((pexels_params.nil?) || (pexels_params["photos"][0].nil?))
       small_image_url = pexels_params["photos"][0]["src"]["small"]
     # file = URI.open(small_image_url)
       open('image.jpg', 'wb') do |file|
