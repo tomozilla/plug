@@ -7,7 +7,7 @@ function findMe() {
 
         //dummy one
         const startButtons = document.querySelectorAll("#event-index");
-        const newStartButtonText = document.querySelector(".btn.btn-gradient");
+        const newStartButtonText = document.querySelectorAll("#event-index");
         console.log("if navigator.geolocation has some coordinates");
         console.log(geo);
         geo.getCurrentPosition(function () {}, function () {}, {});
@@ -22,7 +22,7 @@ function findMe() {
           startButtons.forEach((startButton)=>{
           startButton.attributes.href.value = `${startButton.attributes.href.value}?lat=${currentLatitude}&lon=${currentLongitude}`;
           });
-          newStartButtonText.text = "See Events";
+          newStartButtonText[1].text = "See Events";
         }, function(error) {
           console.log("if navigator.geolocation has errors");
           const currentLatitude = 35.642927;
