@@ -34,59 +34,10 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Baloo+Paaji+2|Kaushan+Script|Monoton|PT+Serif|Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-      <script>
-        function findMe() {
-        console.log("getting geolocation")
-          const geo = navigator.geolocation
-          document.addEventListener('DOMContentLoaded',
-          (event) => {
-            if(geo) {
-
-              //dummy one
-              const startButtons = document.querySelectorAll("#event-index");
-              const newStartButtonText = document.querySelector(".btn.btn-gradient");
-              console.log("if navigator.geolocation has some coordinates");
-              console.log(geo);
-              geo.getCurrentPosition(function () {}, function () {}, {});
-              //working one
-              geo.getCurrentPosition(function(position) {
-                const currentLatitude = position.coords.latitude;
-                console.log(currentLatitude);
-                const currentLongitude = position.coords.longitude;
-                console.log(currentLongitude);
-                console.log(startButtons);
-                console.log(newStartButtonText);
-                startButtons.forEach((startButton)=>{
-                startButton.attributes.href.value = `${startButton.attributes.href.value}?lat=${currentLatitude}&lon=${currentLongitude}`;
-                });
-                newStartButtonText.text = "See Events";
-              }, function(error) {
-                console.log("if navigator.geolocation has errors");
-                const currentLatitude = 35.642927;
-                const currentLongitude = 139.825334;
-                startButtons.forEach((startButton)=>{
-                startButton.attributes.href.value = `${startButton.attributes.href.value}?lat=${currentLatitude}&lon=${currentLongitude}`;
-                });
-                newStartButtonText.text = "See Events";
-              });
-            } else {
-              const currentLatitude = 35.642927;
-              const currentLongitude = 139.825334;
-              console.log("if navigator.geolocation is false");
-              startButtons.forEach((startButton)=>{
-              startButton.attributes.href.value = `${startButton.attributes.href.value}?lat=${currentLatitude}&lon=${currentLongitude}`;
-              });
-              newStartButtonText.text = "See Events";
-            }
-          })
-        }
-      findMe();
-      </script>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
