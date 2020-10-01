@@ -42,7 +42,7 @@ class EventsController < ApplicationController
           @track_counter[user_track.track_id] ||= [0, user_track.track]
           @track_counter[user_track.track_id][0] += 1
         end
-        @tracks = @track_counter.sort_by { |track_id, data| data.first }.reverse!.take(20).map { |_, data| data.second }
+        @tracks = @track_counter.sort_by { |track_id, data| data.first }.reverse!.take(10).map { |_, data| data.second }
       end
     end
   end

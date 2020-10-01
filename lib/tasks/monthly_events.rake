@@ -4,7 +4,7 @@ namespace :monthly_events do
     WorldCity.where(iso3: "USA").limit(200).each do |city|
       CreateCityEvent.perform_now(city)
     end
-    WorldCity.where(iso3: ["JPN", "KOR"]).each do |city|
+    WorldCity.where(iso3: ["JPN", "KOR", "SGR", "THA", "IDN", "VNM", "AUS"]).each do |city|
       CreateCityEvent.perform_now(city)
     end
   end
