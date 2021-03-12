@@ -4,6 +4,6 @@ namespace :delete_monthly_events do
     Event.where(sub_event: true).each do |event|
       event.date = nil
       event.save
-    end  
+    end
   end
 end
