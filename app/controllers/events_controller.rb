@@ -33,7 +33,7 @@ class EventsController < ApplicationController
     else
       admin_user = User.find_by(email: ENV['ADMIN_EMAIL'])
       RefreshTokenService.refresh_token(admin_user)
-      @admin_token = admin_user.access_token
+      @user_token = current_user.access_token
       @event = Event.includes(users: :tracks).find(params[:id])
       @users = @event.users.where.not(id: current_user.id)
       @track_counter = {}

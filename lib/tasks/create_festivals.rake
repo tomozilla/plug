@@ -17,7 +17,7 @@ namespace :create_festivals do
         end
       end
       if (doc.search('div.col div.hubscene a')[0] != nil) && !canceled
-        doc.search('div.col div.hubscene a').each do |element| 
+        doc.search('div.col div.hubscene a').each do |element|
           text_value = element.attributes["href"].value
           p text_value if text_value.match?(/www.google.com/)
         end

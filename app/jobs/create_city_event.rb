@@ -15,17 +15,17 @@ class CreateCityEvent < ApplicationJob
         genre: "Ranking",
         sub_event: true
       }
-    # new_event = Event.create!(event[0])
-    # 2.times do
-    #   UsersEvent.create!(
-    #     user: User.all.sample,
-    #     event: new_event)
-    # end
-    # 2.times do
-    #   TracksUser.create!(
-    #     event: new_event,
-    #     user: new_event.users.sample,
-    #     track: Track.all.sample)
-    # end
+    new_event = Event.create!(event[0])
+    2.times do
+      UsersEvent.create!(
+        user: User.all.sample,
+        event: new_event)
+    end
+    2.times do
+      TracksUser.create!(
+        event: new_event,
+        user: new_event.users.sample,
+        track: Track.all.sample)
+    end
   end
 end
