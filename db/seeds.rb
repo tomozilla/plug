@@ -25,8 +25,7 @@ users = [
     email: ENV['USER1_EMAIL'],
     password: "111111",
     refresh_token: ENV['USER1_REFRESH_TOKEN'],
-    spotify_id: ENV['USER1_SPOTIFY_ID'],
-    updated_at: "2020-02-20 11:28:40"
+    spotify_id: ENV['USER1_SPOTIFY_ID']
   }
 ]
 
