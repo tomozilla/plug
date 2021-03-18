@@ -32,7 +32,8 @@ users = [
 users.each do |user|
   createdUser = User.create(user)
   RefreshTokenService.refresh_token(createdUser)
-  FetchTracksService.downloadTracks(createdUser)
+  updatedUser = User.where(email: createdUser.email).first
+  FetchTracksService.downloadTracks(updatedUser)
 end
 
 10.times do

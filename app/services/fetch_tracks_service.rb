@@ -1,7 +1,7 @@
 class FetchTracksService
   def self.downloadTracks(user)
     header = {
-      Authorization: "Bearer #{user.access_token}" 
+      Authorization: "Bearer #{user.access_token}"
     }
     tracks_response = RestClient.get("https://api.spotify.com/v1/me/tracks?limit=50", header)
     tracks_params = JSON.parse(tracks_response)
