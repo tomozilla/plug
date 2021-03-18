@@ -29,7 +29,7 @@ class User < ApplicationRecord
   end
 
   def access_token_expired?
-    (Time.now - self.updated_at) > 3300
+    (Time.now - self.updated_at) > 3300 || self.access_token.nil?
   end
 
   def favorited_tracks
